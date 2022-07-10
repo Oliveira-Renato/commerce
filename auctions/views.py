@@ -4,11 +4,13 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 
-from .models import User
+from .models import User, AuctionsListing
 
 # just a comment
-def index(request):
-    return render(request, "auctions/index.html")
+def index(request): 
+    return render(request, "auctions/index.html", {
+        "teste": AuctionsListing.objects.all()
+    })
 
 
 def login_view(request):
