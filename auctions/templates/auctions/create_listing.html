@@ -2,46 +2,46 @@
 
 {% block body %}
 <h1>Create Listing</h1>
-<h3>In order to create a new listing you shall be <a href="{% url 'login' %}">logged in</a>. If you still don't have an account, just <a href="{% url 'register' %}">click here!</a></h3>
-
-<form action="">
-    {% csrf_token %}
-    {% if user.is_authenticated %}
-    {% else %}
-    {% endif %}
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">Title</span>
-        <input type="text" class="form-control" name="title" placeholder="Title's listing" aria-label="Username" aria-describedby="basic-addon1">
-    </div>
-    <div class="input-group">
-        <span class="input-group-text">Description</span>
-        <textarea class="form-control" name="description" aria-label="With textarea"></textarea>
-    </div>
-    <label for="basic-url" class="form-label mt-3">Inicial bid</label>
-    <div class="input-group mb-3">
-        <span class="input-group-text">$</span>
-        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-        <span class="input-group-text">.00</span>
-    </div>
-    <label for="basic-url" class="form-label">Listing Image URL</label>
+{% if user.is_authenticated %}
+    <form action="">
+        {% csrf_token %}
         <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon3">https://example.com/img/</span>
-        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-    </div>
-    <div class="form-group">
-        <label for="category">Category</label>
-        <select class="form-select" name="category" id="category">
-            <option selected>Choose...</option>
-            <option>Art</option>
-            <option>Books</option>
-            <option>Clothing</option>
-            <option>Electronics</option>
-            <option>Furniture</option>
-            <option>Games</option>
-            <option>Music</option>
-            <option>Other</option>
-        </select>
-    </div>
-    <button type="submit" class="btn btn-primary">Create new listing</button>
-</form>
+            <span class="input-group-text" id="basic-addon1">Title</span>
+            <input type="text" class="form-control" name="title" placeholder="Title's listing" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group">
+            <span class="input-group-text">Description</span>
+            <textarea class="form-control" name="description" aria-label="With textarea"></textarea>
+        </div>
+        <label for="basic-url" class="form-label mt-3">Inicial bid</label>
+        <div class="input-group mb-3">
+            <span class="input-group-text">$</span>
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <span class="input-group-text">.00</span>
+        </div>
+        <label for="basic-url" class="form-label">Listing Image URL</label>
+            <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3">https://example.com/img/</span>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+        </div>
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select class="form-select" name="category" id="category">
+                <option selected>Choose...</option>
+                <option>Art</option>
+                <option>Books</option>
+                <option>Clothing</option>
+                <option>Electronics</option>
+                <option>Furniture</option>
+                <option>Games</option>
+                <option>Music</option>
+                <option>Other</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Create new listing</button>
+    </form>
+{% else %}
+    <h3>In order to create a new listing you shall be <a href="{% url 'login' %}">logged in</a>. If you still don't have an account, just <a href="{% url 'register' %}">click here!</a></h3>
+{% endif %}
+
 {% endblock %}
