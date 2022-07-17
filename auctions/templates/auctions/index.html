@@ -2,14 +2,17 @@
 
 {% block body %}
     <h2>Active Listings</h2>
-     <ul>
+     <ul class="auto-grid">
         {% for t in teste %}
             {% if t.active == 1 %}
+            <div class="col">
                 <h2>{{ t.title}}</h2>
-                <li><img src={{t.image_url}}></li>
-                <li>{{ t.description}}</li>
-                <li>${{ t.inicial_bid}}</li>
-                <li>{{t.user}}</li>
+                <li class="img-item">
+                    <img src={{t.image_url}}>
+                </li>
+                <li class="desc-item">{{ t.description}}</li>
+                <li class="price-iten">${{ t.inicial_bid}}</li>
+            </div>
             {% endif %}
         {% endfor %}
     </ul> 
