@@ -7,7 +7,7 @@ class User(AbstractUser):
     id = models.AutoField(primary_key=True)
     
     def __str__(self):
-        return f"id: {self.id} username: {self.username}"
+        return f"{self.username}"
 class AuctionsListing(models.Model):   
     id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE,default=None,related_name='auctions')
