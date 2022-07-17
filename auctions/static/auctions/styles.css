@@ -64,4 +64,45 @@ ul {
   overflow: hidden;
 }
 
+#listing .listing-info {
+  margin: 0 40px;
+}
+#listing .listing-info > h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+#listing .listing-info .listing-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+#listing .listing-info .listing-image > img {
+  width: 400px;
+  height: auto;
+}
+#listing .listing-info .listing-description {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+#listing .listing-info .listing-description > p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+}
+#listing .listing-info .listing-price {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+#listing .listing-info .listing-price > p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+
 /*# sourceMappingURL=styles.css.map */

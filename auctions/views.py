@@ -75,3 +75,8 @@ def create_listing(request):
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "auctions/create_listing.html")
+
+def listing(request, listing_id):
+    return render(request, "auctions/listing.html", {
+        "listing": AuctionsListing.objects.get(id=listing_id)
+    })

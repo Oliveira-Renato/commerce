@@ -12,6 +12,9 @@
                 </li>
                 <li class="desc-item">{{ t.description}}</li>
                 <li class="price-iten">${{ t.inicial_bid}}</li>
+                <a href="{% url 'listing' t.id %}">
+                    <button class="">See more</button>
+                </a>
             </div>
             {% endif %}
         {% endfor %}
