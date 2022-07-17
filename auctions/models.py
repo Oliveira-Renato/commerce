@@ -2,11 +2,13 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
+
 class User(AbstractUser):
     id = models.AutoField(primary_key=True)
-    pass
-
-class AuctionsListing(models.Model):
+    
+    def __str__(self):
+        return f"id: {self.id} username: {self.username}"
+class AuctionsListing(models.Model):   
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=64, blank=False, null=False)
     description = models.CharField(max_length=2000, blank=False, 
@@ -22,3 +24,5 @@ class Bids():
 
 class Comments():
     pass
+
+
