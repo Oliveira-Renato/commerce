@@ -70,7 +70,7 @@ def create_listing(request):
         price = request.POST["price"]
         image = request.POST["image"]
         user = request.user
-        listing = AuctionsListing(title=title, description=description, inicial_bid=price, image_url=image, user=user)
+        listing = AuctionsListing(title=title, description=description, inicial_bid=price, image_url=image, user=user, active=1)
         listing.save()
         return HttpResponseRedirect(reverse("index"))
     else:

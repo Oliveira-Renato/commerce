@@ -10,6 +10,7 @@ class User(AbstractUser):
         return f"id: {self.id} username: {self.username}"
 class AuctionsListing(models.Model):   
     id = models.AutoField(primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE,default=None,related_name='auctions')
     title = models.CharField(max_length=64, blank=False, null=False)
     description = models.CharField(max_length=2000, blank=False, 
     null=False)
