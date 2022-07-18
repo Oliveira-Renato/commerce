@@ -1,0 +1,34 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h1>My watchlist</h1>
+    {% if user.is_authenticated %}
+        {% if watchlist %}
+            <ul class="auto-grid">
+            {% for item in watchlist %}
+                <div class="col">
+                    <div class="watch-con">
+                        <a href="{% url 'watchlist' item.listing.id %}">
+                            <span class="iconify" data-icon="fxemoji:eye"></span>remove to watchlist
+                        </a>
+                    </div>
+                    <h2>{{ item.listing.title }}</h2>
+                    <li class="img-item">
+                        <img src={{item.listing.image_url}}>
+                    </li>
+                    <li class="desc-item">{{ item.listing.description}}</li>
+                    <li class="price-iten">${{ item.listing.inicial_bid}}</li>
+                    <a href="{% url 'listing' item.listing.id %}">
+                        <button class="">See more</button>
+                    </a>
+                </div>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>You have no items in your watchlist</p>
+        {% endif %}
+    {% else %}
+        <p>Please <a href="{% url 'login' %}">log in</a> to see your watchlist</p>
+    {% endif %}
+    
+{% endblock %}

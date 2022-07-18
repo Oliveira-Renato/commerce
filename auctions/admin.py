@@ -1,7 +1,12 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import AuctionsListing, User, Category 
+from .models import AuctionsListing, User, Category, Watchlist 
+
+
+class WatchlistAdmin(admin.ModelAdmin):
+    list_display = ('id', 'user', 'listing')
+    list_filter = ('user', 'listing')
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('id','name')
@@ -17,3 +22,4 @@ class CategoryAdmin(admin.ModelAdmin):
 admin.site.register(AuctionsListing, AuctionsListingAdmin)
 admin.site.register(User, UsersAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(Watchlist, WatchlistAdmin)

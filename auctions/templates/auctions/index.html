@@ -6,6 +6,11 @@
         {% for t in teste %}
             {% if t.active == 1 %}
             <div class="col">
+                <div class="watch-con">
+                    <a href="{% url 'watchlist' t.id %}">
+                        <span class="iconify" data-icon="fxemoji:eye"></span>add to watchlist
+                    </a>
+                </div>
                 <h2>{{ t.title}}</h2>
                 <li class="img-item">
                     <img src={{t.image_url}}>
@@ -19,6 +24,4 @@
             {% endif %}
         {% endfor %}
     </ul> 
-    <!-- <h1>{{ teste.title }} AAA</h1>
-    <img src={{teste}} alt="">   -->
 {% endblock %}

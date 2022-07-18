@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 
-from .models import User, AuctionsListing
+from .models import User, AuctionsListing, Watchlist
 
 # just a comment
 def index(request): 
@@ -80,3 +80,20 @@ def listing(request, listing_id):
     return render(request, "auctions/listing.html", {
         "listing": AuctionsListing.objects.get(id=listing_id)
     })
+
+def watchlist_view(request):
+    if request.user.is_authenticated:   
+        user = request.user 
+        return render(request, "auctions/watchlist.html", {
+        "watchlist": Watchlist.objects.filter(user=user)
+        }) 
+    else:
+        return render(request, "auctions/watchlist.html")
+
+def watchlist(request, listing_id):
+    if listing_id:
+        user = request.user
+        listing = AuctionsListing.objects.get(id=listing_id)
+        watchlist = Watchlist(user=user, listing=listing)
+        watchlist.save()
+        return HttpResponseRedirect(reverse("index"))

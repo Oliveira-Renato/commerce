@@ -41,7 +41,7 @@
         <button type="submit" class="btn btn-primary">Create new listing</button>
     </form>
 {% else %}
-    <h3>In order to create a new listing you shall be <a href="{% url 'login' %}">logged in</a>. If you still don't have an account, just <a href="{% url 'register' %}">click here!</a></h3>
+    <p>In order to create a new listing you shall be <a href="{% url 'login' %}">logged in</a>. If you still don't have an account, just <a href="{% url 'register' %}">click here!</a></p>
 {% endif %}
 
 {% endblock %}
