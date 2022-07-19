@@ -3,6 +3,17 @@
 {% block body %}
 <section id="listing">
     <div class="listing-info">
+        <div class="watch-con text-center mb-4">
+            {% if watchlist %}
+                <a href="{% url 'watchlist' listing.id  1 %}">
+                    <span class="iconify" data-icon="fxemoji:eye"></span>remove to watchlist
+                </a>
+            {% else %}
+                <a href="{% url 'watchlist' listing.id  0 %}">
+                    <span class="iconify" data-icon="fxemoji:eye"></span>add to watchlist
+                </a>
+            {% endif %}
+        </div>
         <h1>{{ listing.title }}</h1>
         <div class="listing-image text-center">
             <img src="{{ listing.image_url }}" alt="">

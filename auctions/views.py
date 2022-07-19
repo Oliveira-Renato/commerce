@@ -6,6 +6,12 @@ from django.urls import reverse
 
 from .models import User, AuctionsListing, Watchlist
 
+
+def validadeUser(request):
+    if request.user.is_authenticated:
+        return HttpResponse("true")
+    else:
+        return HttpResponse("false")
 # just a comment
 def index(request): 
     return render(request, "auctions/index.html", {
@@ -76,9 +82,15 @@ def create_listing(request):
         return render(request, "auctions/create_listing.html")
 
 def listing(request, listing_id):
-    return render(request, "auctions/listing.html", {
-        "listing": AuctionsListing.objects.get(id=listing_id)
-    })
+    if request.user.is_authenticated:   
+        return render(request, "auctions/listing.html", {
+            "listing": AuctionsListing.objects.get(id=listing_id),
+            "watchlist": Watchlist.objects.filter(user=request.user, listing=listing_id)
+        })
+    else:
+        return render(request, "auctions/listing.html", {
+            "listing": AuctionsListing.objects.get(id=listing_id)
+        })
 
 def watchlist_view(request):
     if request.user.is_authenticated:   
