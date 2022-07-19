@@ -15,7 +15,6 @@ def index(request):
 
 def login_view(request):
     if request.method == "POST":
-
         # Attempt to sign user in
         username = request.POST["username"]
         password = request.POST["password"]
@@ -90,10 +89,16 @@ def watchlist_view(request):
     else:
         return render(request, "auctions/watchlist.html")
 
-def watchlist(request, listing_id):
-    if listing_id:
+def watchlist(request, listing_id, optional_parameter):
+    if listing_id and optional_parameter == 0:
         user = request.user
         listing = AuctionsListing.objects.get(id=listing_id)
         watchlist = Watchlist(user=user, listing=listing)
         watchlist.save()
         return HttpResponseRedirect(reverse("index"))
+    else:
+        user = request.user
+        listing = AuctionsListing.objects.get(id=listing_id)
+        watchlist = Watchlist.objects.get(user=user, listing=listing)
+        watchlist.delete()
+        return HttpResponseRedirect(reverse("watchlist_view"))

@@ -7,7 +7,7 @@
             {% if t.active == 1 %}
             <div class="col">
                 <div class="watch-con">
-                    <a href="{% url 'watchlist' t.id %}">
+                    <a href="{% url 'watchlist' t.id  0 %}">
                         <span class="iconify" data-icon="fxemoji:eye"></span>add to watchlist
                     </a>
                 </div>
