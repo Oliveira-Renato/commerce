@@ -1,7 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-
 class Watchlist(models.Model):
     id = models.AutoField(primary_key=True)
     user = models.ForeignKey('User', on_delete=models.CASCADE)
@@ -22,7 +21,7 @@ class User(AbstractUser):
     
     def __str__(self):
         return f"{self.username}"
-        
+
 class AuctionsListing(models.Model):   
     id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE,default=None,related_name='auctions')
@@ -36,8 +35,15 @@ class AuctionsListing(models.Model):
 
     def __str__(self):
         return f"title:{self.title} desc:{self.description} ${self.inicial_bid} img:{self.image_url} active:{self.active}"
-class Bids():
-    pass
+
+class Bids(models.Model):
+    id = models.AutoField(primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE,default=None,related_name='bids')
+    listing = models.ForeignKey(AuctionsListing, on_delete=models.CASCADE,default=None,related_name='bid_listing')
+    bid = models.FloatField()
+
+    def __str__(self):
+        return f"{self.user} inicial bid:{self.listing.inicial_bid} bid:{self.bid}"
 
 class Comments():
     pass
