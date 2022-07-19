@@ -3,8 +3,8 @@ from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-
-from .models import User, AuctionsListing, Watchlist
+from django.contrib import messages
+from .models import User, AuctionsListing, Watchlist, Bids
 
 
 def validadeUser(request):
@@ -82,14 +82,16 @@ def create_listing(request):
         return render(request, "auctions/create_listing.html")
 
 def listing(request, listing_id):
-    if request.user.is_authenticated:   
+    if request.user.is_authenticated:
         return render(request, "auctions/listing.html", {
             "listing": AuctionsListing.objects.get(id=listing_id),
-            "watchlist": Watchlist.objects.filter(user=request.user, listing=listing_id)
+            "watchlist": Watchlist.objects.filter(user=request.user, listing=listing_id),
+            "bids": Bids.objects.filter(listing=listing_id)
         })
     else:
         return render(request, "auctions/listing.html", {
-            "listing": AuctionsListing.objects.get(id=listing_id)
+            "listing": AuctionsListing.objects.get(id=listing_id),
+            "bids": Bids.objects.filter(listing=listing_id)
         })
 
 def watchlist_view(request):
@@ -114,3 +116,20 @@ def watchlist(request, listing_id, optional_parameter):
         watchlist = Watchlist.objects.get(user=user, listing=listing)
         watchlist.delete()
         return HttpResponseRedirect(reverse("watchlist_view"))
+
+
+def bid(request, listing_id):
+    if request.method == "POST":
+        user = request.user
+        listing = AuctionsListing.objects.get(id=listing_id)
+        bid = request.POST["bid"]
+        if float(bid) > float(listing.inicial_bid):
+            new_bid = Bids(user=user, listing=listing, bid=bid)
+            new_bid.save()
+            return HttpResponseRedirect(reverse("listing", args=[listing_id]))
+        else:
+            HttpResponseRedirectError(reverse("listing", args=[listing_id]))    
+    else:
+        return render(request, "auctions/listing.html", {
+            "listing": AuctionsListing.objects.get(id=listing_id)
+        })

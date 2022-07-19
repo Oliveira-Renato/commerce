@@ -43,7 +43,7 @@ class Bids(models.Model):
     bid = models.FloatField()
 
     def __str__(self):
-        return f"{self.user} inicial bid:{self.listing.inicial_bid} bid:{self.bid}"
+        return f"{self.user} {self.listing.inicial_bid} {self.bid}"
 
 class Comments():
     pass
