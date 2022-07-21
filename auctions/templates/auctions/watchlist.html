@@ -8,7 +8,7 @@
             {% for item in watchlist %}
                 <div class="col">
                     <div class="watch-con">
-                        <a href="{% url 'watchlist' item.listing.id %}">
+                        <a href="{% url 'watchlist' item.listing.id 1 %}">
                             <span class="iconify" data-icon="fxemoji:eye"></span>remove to watchlist
                         </a>
                     </div>

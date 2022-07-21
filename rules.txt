@@ -1,0 +1,10 @@
+-- Class Bids:
+  + ForeignKey User
+  + ForeignKey Listing 
+  + Bid:
+  
+  if user is authenticate:
+     bid > inicial_bid AND if bids:
+                                bid > bids
+  else:
+    Error message

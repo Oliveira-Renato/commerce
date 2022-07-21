@@ -3,6 +3,19 @@
 {% block body %}
 <section id="listing">
     <div class="listing-info">
+        <div class="watch-con text-center mb-4">
+            {% if user.is_authenticated %}         
+                {% if watchlist %}
+                    <a href="{% url 'watchlist' listing.id  1 %}">
+                        <span class="iconify" data-icon="fxemoji:eye"></span>remove to watchlist
+                    </a>
+                {% else %}
+                    <a href="{% url 'watchlist' listing.id  0 %}">
+                        <span class="iconify" data-icon="fxemoji:eye"></span>add to watchlist
+                    </a>
+                {% endif %}
+            {% endif %}
+        </div>
         <h1>{{ listing.title }}</h1>
         <div class="listing-image text-center">
             <img src="{{ listing.image_url }}" alt="">
@@ -11,7 +24,33 @@
             <p>{{ listing.description }}</p>
         </div>
         <div class="listing-price text-center">
-            <p>${{ listing.inicial_bid }}</p>
+            <p>Starting Bid ${{ listing.inicial_bid }}</p>
+        </div>
+        <div class="bids">
+            {% if bids  %}
+                <h3>Bids</h3>
+                {% for bid in bids %}
+                    <div class="bid">
+                        <p>{{ bid.user.username }}</p>
+                        <p>${{ bid.bid }}</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <h3>No bids yet</h3>
+                <p>{{bids}}</p>
+            {% endif %}
+            <form action="{% url 'bid' listing.id %}" method="POST">
+                {% csrf_token %}
+               {% if user.is_authenticated %}
+                    <div class="form-group">
+                        <label for="bid">Bid</label>
+                        <input type="number" class="form-control" id="bid" name="bid" placeholder="Bid">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Bid</button>
+                {% else %}
+                    <strong>You must be logged in to bid</strong>
+                {% endif %}
+            </form>
         </div>
     </div>
 </section>

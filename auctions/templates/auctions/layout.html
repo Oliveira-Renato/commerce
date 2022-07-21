@@ -12,6 +12,7 @@
         <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
         
         <link href="{% static 'auctions/styles.css' %}" rel="stylesheet">
+        <link href="{% static 'auctions/error.css' %}" rel="stylesheet" >
     </head>
     <body>
         <h1>Auctions</h1>
@@ -30,6 +31,9 @@
                 <a class="nav-link" href="{% url 'create_listing' %}">Create Listing</a>
             </li>
             {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'watchlist_view' %}">My Watchlist</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
                 </li>

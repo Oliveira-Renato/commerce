@@ -1,8 +1,13 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import AuctionsListing, User, Category, Watchlist 
+from .models import AuctionsListing, User, Category, Watchlist, Bids 
 
+class BidsAdmin(admin.ModelAdmin):
+    list_display = ('user', 'listing', 'bid')
+    list_filter = ('user', 'listing', 'bid')
+    search_fields = ('user', 'listing', 'bid')
+    
 
 class WatchlistAdmin(admin.ModelAdmin):
     list_display = ('id', 'user', 'listing')
@@ -23,3 +28,4 @@ admin.site.register(AuctionsListing, AuctionsListingAdmin)
 admin.site.register(User, UsersAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Watchlist, WatchlistAdmin)
+admin.site.register(Bids, BidsAdmin)
