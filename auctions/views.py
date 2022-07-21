@@ -10,20 +10,12 @@ from .models import User, AuctionsListing, Watchlist, Bids
 def error_message(request,message):
     return render(request, "auctions/error_message.html", {
         "message": message
-    })
-    
-
-def validadeUser(request):
-    if request.user.is_authenticated:
-        return HttpResponse("true")
-    else:
-        return HttpResponse("false")
+    })   
 # just a comment
 def index(request): 
     return render(request, "auctions/index.html", {
         "teste": AuctionsListing.objects.all()
     })
-
 
 def login_view(request):
     if request.method == "POST":
@@ -42,7 +34,6 @@ def login_view(request):
             })
     else:
         return render(request, "auctions/login.html")
-
 
 def logout_view(request):
     logout(request)
@@ -123,7 +114,6 @@ def watchlist(request, listing_id, optional_parameter):
         watchlist.delete()
         return HttpResponseRedirect(reverse("watchlist_view"))
 
-
 def bid(request, listing_id):
     if request.method == "POST":
         user = request.user
@@ -133,11 +123,9 @@ def bid(request, listing_id):
             bids = Bids.objects.filter(listing=listing_id)
             new_bid = Bids(user=user, listing=listing, bid=bid)
 
-            if bids.count() == 0:
+            if bids.count() == 0 or float(bid) > float(bids.last().bid):
                 new_bid.save()
                 return HttpResponseRedirect(reverse("listing", args=(listing_id,)))
-            elif float(bid) > float(bids.last().bid):
-                new_bid.save()
             else:
                 return HttpResponse(error_message(request, "The bid must be higher than the last bid"))
         else:
