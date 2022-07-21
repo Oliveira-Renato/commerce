@@ -7,6 +7,12 @@ from django.contrib import messages
 from .models import User, AuctionsListing, Watchlist, Bids
 
 
+def error_message(request,message):
+    return render(request, "auctions/error_message.html", {
+        "message": message
+    })
+    
+
 def validadeUser(request):
     if request.user.is_authenticated:
         return HttpResponse("true")
@@ -124,11 +130,18 @@ def bid(request, listing_id):
         listing = AuctionsListing.objects.get(id=listing_id)
         bid = request.POST["bid"]
         if float(bid) > float(listing.inicial_bid):
+            bids = Bids.objects.filter(listing=listing_id)
             new_bid = Bids(user=user, listing=listing, bid=bid)
-            new_bid.save()
-            return HttpResponseRedirect(reverse("listing", args=[listing_id]))
+
+            if bids.count() == 0:
+                new_bid.save()
+                return HttpResponseRedirect(reverse("listing", args=(listing_id,)))
+            elif float(bid) > float(bids.last().bid):
+                new_bid.save()
+            else:
+                return HttpResponse(error_message(request, "The bid must be higher than the last bid"))
         else:
-            HttpResponseRedirectError(reverse("listing", args=[listing_id]))    
+           return HttpResponse(error_message(request, "The bid must be higher than the last bid"))
     else:
         return render(request, "auctions/listing.html", {
             "listing": AuctionsListing.objects.get(id=listing_id)

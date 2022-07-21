@@ -5,6 +5,9 @@ from .models import AuctionsListing, User, Category, Watchlist, Bids
 
 class BidsAdmin(admin.ModelAdmin):
     list_display = ('user', 'listing', 'bid')
+    list_filter = ('user', 'listing', 'bid')
+    search_fields = ('user', 'listing', 'bid')
+    
 
 class WatchlistAdmin(admin.ModelAdmin):
     list_display = ('id', 'user', 'listing')

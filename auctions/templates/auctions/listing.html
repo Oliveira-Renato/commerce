@@ -4,14 +4,16 @@
 <section id="listing">
     <div class="listing-info">
         <div class="watch-con text-center mb-4">
-            {% if watchlist %}
-                <a href="{% url 'watchlist' listing.id  1 %}">
-                    <span class="iconify" data-icon="fxemoji:eye"></span>remove to watchlist
-                </a>
-            {% else %}
-                <a href="{% url 'watchlist' listing.id  0 %}">
-                    <span class="iconify" data-icon="fxemoji:eye"></span>add to watchlist
-                </a>
+            {% if user.is_authenticated %}         
+                {% if watchlist %}
+                    <a href="{% url 'watchlist' listing.id  1 %}">
+                        <span class="iconify" data-icon="fxemoji:eye"></span>remove to watchlist
+                    </a>
+                {% else %}
+                    <a href="{% url 'watchlist' listing.id  0 %}">
+                        <span class="iconify" data-icon="fxemoji:eye"></span>add to watchlist
+                    </a>
+                {% endif %}
             {% endif %}
         </div>
         <h1>{{ listing.title }}</h1>
@@ -22,7 +24,7 @@
             <p>{{ listing.description }}</p>
         </div>
         <div class="listing-price text-center">
-            <p>${{ listing.inicial_bid }}</p>
+            <p>Starting Bid ${{ listing.inicial_bid }}</p>
         </div>
         <div class="bids">
             {% if bids  %}
@@ -39,11 +41,15 @@
             {% endif %}
             <form action="{% url 'bid' listing.id %}" method="POST">
                 {% csrf_token %}
-                <div class="form-group">
-                    <label for="bid">Bid</label>
-                    <input type="number" class="form-control" id="bid" name="bid" placeholder="Bid">
-                </div>
-                <button type="submit" class="btn btn-primary">Bid</button>
+               {% if user.is_authenticated %}
+                    <div class="form-group">
+                        <label for="bid">Bid</label>
+                        <input type="number" class="form-control" id="bid" name="bid" placeholder="Bid">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Bid</button>
+                {% else %}
+                    <strong>You must be logged in to bid</strong>
+                {% endif %}
             </form>
         </div>
     </div>
