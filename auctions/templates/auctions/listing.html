@@ -63,15 +63,26 @@
             </form>
         </div>
     </aside>
-    <div class="comments-box mt-5">
+    <div class="comments-box mt-5 listing-info">
         <div class="comments">
+            <h3>Comments</h3>
+            {% if comments %}
+                {% for comment in comments %}
+                    <div class="comment">
+                        <p>{{ comment.user.username }}</p>
+                        <p>{{ comment.comment }}</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No comments yet</p>
+            {% endif %}
             <form action="{% url 'comments' listing.id %}" method="post">
-                <div class="form-group listing-info">
+                <div class="form-group ">
                     {% csrf_token %}
                     <label for="comment">Comment</label>
                     <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
                 </div>
-               <div class="button-container listing-info mt-2">
+               <div class="button-container mt-2">
                     <button type="submit" class="btn btn-primary">Comment</button>
                </div>
             </form>

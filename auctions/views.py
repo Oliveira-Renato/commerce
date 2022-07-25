@@ -81,11 +81,20 @@ def create_listing(request):
 def listing(request, listing_id):
     if request.user.is_authenticated:
         winner = Winner.objects.filter(listing=listing_id)
+        comments = Comments.objects.filter(listing=listing_id)
         if winner and str(winner[0].winner_user) == str(request.user):
             return render(request, "auctions/listing.html", {
                 "listing": AuctionsListing.objects.get(id=listing_id),
                 "message": "You are the winner!"
             })
+        elif comments:
+            return render(request, "auctions/listing.html", {
+                "listing": AuctionsListing.objects.get(id=listing_id),
+                "bids": Bids.objects.filter(listing=listing_id),
+                "watchlist": Watchlist.objects.filter(user=request.user, listing=listing_id),
+                "comments": comments
+            })
+        
         return render(request, "auctions/listing.html", {
             "listing": AuctionsListing.objects.get(id=listing_id),
             "watchlist": Watchlist.objects.filter(user=request.user, listing=listing_id),
