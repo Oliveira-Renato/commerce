@@ -4,8 +4,10 @@
 <section id="listing">
     <div class="listing-info">
         <div class="watch-con text-center mb-4">
-            <h2>{{ winner.user }}</h2>
-            {% if user.is_authenticated %}            
+            {% if user.is_authenticated %} 
+                {% if message %}
+                    <h2>{{ message }}</h2>
+                {% endif %}
                 {% if request.user == listing.user %}
                    <div class="close-auction show">
                         <a href="{% url 'close_listing' listing.id %}">
