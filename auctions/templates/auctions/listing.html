@@ -4,7 +4,8 @@
 <section id="listing">
     <div class="listing-info">
         <div class="watch-con text-center mb-4">
-            {% if user.is_authenticated %}       
+            <h2>{{ winner.user }}</h2>
+            {% if user.is_authenticated %}            
                 {% if request.user == listing.user %}
                    <div class="close-auction show">
                         <a href="{% url 'close_listing' listing.id %}">
@@ -12,7 +13,7 @@
                         </a>
                    </div>
                 {% endif %}
-                {% if watchlist %}
+                {% if watchlist %}  
                     <a href="{% url 'watchlist' listing.id  1 %}">
                         <span class="iconify" data-icon="fxemoji:eye"></span>remove to watchlist
                     </a>

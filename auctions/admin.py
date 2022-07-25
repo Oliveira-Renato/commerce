@@ -5,15 +5,12 @@ from .models import AuctionsListing, User, Category, Watchlist, Bids, Winner
 
 
 class WinnerAdmin(admin.ModelAdmin):
-    list_display = ('user', 'listing', 'bid', 'date')
-    list_filter = ('user', 'listing', 'bid', 'date')
-    search_fields = ('user', 'listing', 'bid', 'date')
-    ordering = ('user', 'listing', 'bid', 'date')
+    list_display = ('winner_user', 'listing', 'winner_bid', 'date')
+    list_filter = ('winner_user', 'listing', 'winner_bid', 'date')
+    search_fields = ('winner_user', 'listing', 'winner_bid', 'date')
+    ordering = ('winner_user', 'listing', 'winner_bid', 'date')
     date_hierarchy = 'date'
-    fields = ('user', 'listing', 'bid', 'date')
-    readonly_fields = ('user', 'listing', 'bid', 'date')
-    class Meta:
-        model = Winner
+
 
 class BidsAdmin(admin.ModelAdmin):
     list_display = ('user', 'listing', 'bid')
@@ -28,7 +25,7 @@ class WatchlistAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('id','name')
 class AuctionsListingAdmin(admin.ModelAdmin):
-    list_display = ('title', 'description', 'inicial_bid', 'active')
+    list_display = ('id','title', 'description', 'inicial_bid', 'active')
 
 class UsersAdmin(admin.ModelAdmin):
     list_display = ('id','username', 'email')

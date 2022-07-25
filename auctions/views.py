@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 from django.contrib import messages
-from .models import User, AuctionsListing, Watchlist, Bids
+from .models import User, AuctionsListing, Watchlist, Bids, Winner
 
 
 def error_message(request,message):
@@ -83,7 +83,8 @@ def listing(request, listing_id):
         return render(request, "auctions/listing.html", {
             "listing": AuctionsListing.objects.get(id=listing_id),
             "watchlist": Watchlist.objects.filter(user=request.user, listing=listing_id),
-            "bids": Bids.objects.filter(listing=listing_id)
+            "bids": Bids.objects.filter(listing=listing_id),
+            "winner": Winner.objects.filter(listing=listing_id)
         })
     else:
         return render(request, "auctions/listing.html", {
@@ -138,7 +139,14 @@ def bid(request, listing_id):
 def close_listing(request, listing_id):
     if request.user == AuctionsListing.objects.get(id=listing_id).user:
         listing = AuctionsListing.objects.get(id=listing_id)
-        listing.active = 0
-        listing.save()
+        higher_bid = Bids.objects.filter(listing=listing_id).last()
+
+        if higher_bid:
+            higher_bid_user = higher_bid.user
+            winner = Winner(winner_user=higher_bid_user, listing=listing, winner_bid=higher_bid.bid)
+            winner.save()
+            listing.active = 0
+            listing.save()
+
         return HttpResponseRedirect(reverse("index"))
         
