@@ -134,3 +134,11 @@ def bid(request, listing_id):
         return render(request, "auctions/listing.html", {
             "listing": AuctionsListing.objects.get(id=listing_id)
         })
+
+def close_listing(request, listing_id):
+    if request.user == AuctionsListing.objects.get(id=listing_id).user:
+        listing = AuctionsListing.objects.get(id=listing_id)
+        listing.active = 0
+        listing.save()
+        return HttpResponseRedirect(reverse("index"))
+        

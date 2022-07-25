@@ -108,5 +108,15 @@ ul {
         line-height: 1.5rem;
       }
     }
+    .close-auction {
+      display: block;
+      width: 100%;
+      height: auto;
+      > p {
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1.5rem;
+      }
+    }
   } 
 }
