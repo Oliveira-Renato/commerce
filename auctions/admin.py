@@ -1,8 +1,14 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import AuctionsListing, User, Category, Watchlist, Bids, Winner 
+from .models import AuctionsListing, User, Category, Watchlist, Bids, Winner, Comments
 
+class CommentsAdmin(admin.ModelAdmin):
+    list_display = ('listing', 'user', 'comment', 'date')
+    list_filter = ['date']
+    search_fields = ['comment']
+    ordering = ['date']
+    date_hierarchy = 'date'
 
 class WinnerAdmin(admin.ModelAdmin):
     list_display = ('winner_user', 'listing', 'winner_bid', 'date')
@@ -39,3 +45,4 @@ admin.site.register(Category, CategoryAdmin)
 admin.site.register(Watchlist, WatchlistAdmin)
 admin.site.register(Bids, BidsAdmin)
 admin.site.register(Winner, WinnerAdmin)
+admin.site.register(Comments, CommentsAdmin)

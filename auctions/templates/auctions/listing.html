@@ -2,7 +2,7 @@
 
 {% block body %}
 <section id="listing">
-    <div class="listing-info">
+    <aside class="listing-info">
         <div class="watch-con text-center mb-4">
             {% if user.is_authenticated %} 
                 {% if message %}
@@ -60,6 +60,20 @@
                 {% else %}
                     <strong>You must be logged in to bid</strong>
                 {% endif %}
+            </form>
+        </div>
+    </aside>
+    <div class="comments-box mt-5">
+        <div class="comments">
+            <form action="{% url 'comments' listing.id %}" method="post">
+                <div class="form-group listing-info">
+                    {% csrf_token %}
+                    <label for="comment">Comment</label>
+                    <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+                </div>
+               <div class="button-container listing-info mt-2">
+                    <button type="submit" class="btn btn-primary">Comment</button>
+               </div>
             </form>
         </div>
     </div>

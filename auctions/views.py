@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 from django.contrib import messages
-from .models import User, AuctionsListing, Watchlist, Bids, Winner
+from .models import User, AuctionsListing, Watchlist, Bids, Winner, Comments
 
 
 def error_message(request,message):
@@ -155,3 +155,16 @@ def close_listing(request, listing_id):
 
         return HttpResponseRedirect(reverse("index"))
         
+def comments(request, listing_id):
+    if request.method == "POST":
+        user = request.user
+        listing = AuctionsListing.objects.get(id=listing_id)
+        comment = request.POST["comment"]
+        comment = Comments(user=user, listing=listing, comment=comment)
+        comment.save()
+        return HttpResponseRedirect(reverse("listing", args=(listing_id,)))
+    else:
+        return render(request, "auctions/listing.html", {
+            "listing": AuctionsListing.objects.get(id=listing_id),
+            "comments": Comments.objects.filter(listing=listing_id)
+        })
