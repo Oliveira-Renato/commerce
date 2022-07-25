@@ -58,7 +58,12 @@ class Winner(models.Model):
     def __str__(self):
         return f"{self.winner_user}"
         
-class Comments():
-    pass
+class Comments(models.Model):
+    id = models.AutoField(primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE,default=None,related_name='comments')
+    listing = models.ForeignKey(AuctionsListing, on_delete=models.CASCADE,default=None,related_name='comment_listing')
+    comment = models.CharField(max_length=2000, blank=False,null=False)
+    date = models.DateTimeField(auto_now_add=True)
 
-
+    def __str__(self):
+        return f"{self.user} {self.comment}"
