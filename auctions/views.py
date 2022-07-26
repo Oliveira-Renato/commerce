@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 from django.contrib import messages
-from .models import User, AuctionsListing, Watchlist, Bids, Winner, Comments
+from .models import User, AuctionsListing, Watchlist, Bids, Winner, Comments, Category
 
 
 def error_message(request,message):
@@ -72,8 +72,10 @@ def create_listing(request):
         price = request.POST["price"]
         image = request.POST["image"]
         user = request.user
-        listing = AuctionsListing(title=title, description=description, inicial_bid=price, image_url=image, user=user, active=1)
+        category = request.POST["category"]
+        listing = AuctionsListing(title=title, description=description, inicial_bid=price, image_url=image, user=user, active=1, category=category)
         listing.save()
+
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "auctions/create_listing.html")

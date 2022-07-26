@@ -30,6 +30,7 @@ class WatchlistAdmin(admin.ModelAdmin):
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('id','name')
+    
 class AuctionsListingAdmin(admin.ModelAdmin):
     list_display = ('id','title', 'description', 'inicial_bid', 'active')
 
