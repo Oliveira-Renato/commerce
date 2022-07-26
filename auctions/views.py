@@ -72,10 +72,11 @@ def create_listing(request):
         price = request.POST["price"]
         image = request.POST["image"]
         user = request.user
-        category = request.POST["category"]
-        listing = AuctionsListing(title=title, description=description, inicial_bid=price, image_url=image, user=user, active=1, category=category)
+        categories = request.POST.getlist("categories")
+        if  categories[0] != 'Choose...':
+            listing = AuctionsListing(title=title, description=description, inicial_bid=price, image_url=image, user=user, active=1,category=Category.objects.get(name=categories[0]))
+        listing = AuctionsListing(title=title, description=description, inicial_bid=price, image_url=image, user=user, active=1)
         listing.save()
-
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "auctions/create_listing.html")
@@ -178,4 +179,17 @@ def comments(request, listing_id):
         return render(request, "auctions/listing.html", {
             "listing": AuctionsListing.objects.get(id=listing_id),
             "comments": Comments.objects.filter(listing=listing_id)
+        })
+
+def categories(request, category_id):
+    if category_id != 0:
+        category = Category.objects.get(id=category_id)
+        return render(request, "auctions/categories.html", {
+            "categories": Category.objects.all(),
+            "category": category,
+            "listings": AuctionsListing.objects.filter(category=category)
+        })
+    else:
+        return render(request, "auctions/categories.html", {
+            "categories": Category.objects.all()
         })

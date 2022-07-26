@@ -1,0 +1,31 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+  {% if not category %}
+    <h1>Categories</h1>
+    <ul>
+    {% for category in categories %}
+        <li><a href="{% url 'categories'  category.id %}">{{ category.name }}</a></li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <div class="go-back-category">
+      <a href="{% url 'categories' 0 %}">Go back to categories</a>
+    </div>
+    <ul class="auto-grid">
+      {% for item in listings %}
+          <div class="col">
+              <h2>{{ item.title }}</h2>
+              <li class="img-item">
+                  <img src={{item.image_url}}>
+              </li>
+              <li class="desc-item">{{ item.description}}</li>
+              <li class="price-iten">${{ item.inicial_bid}}</li>
+              <a href="{% url 'listing' item.id %}">
+                  <button class="">See more</button>
+              </a>
+          </div>
+      {% endfor %}
+      </ul>
+  {% endif %}
+{% endblock %}

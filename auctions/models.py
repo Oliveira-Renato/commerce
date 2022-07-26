@@ -36,7 +36,7 @@ class AuctionsListing(models.Model):
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"title:{self.title} desc:{self.description} ${self.inicial_bid} img:{self.image_url} active:{self.active}"
+        return f"title:{self.title} desc:{self.description} ${self.inicial_bid} img:{self.image_url} active:{self.active} category:{self.category}"
 
 class Bids(models.Model):
     id = models.AutoField(primary_key=True)
