@@ -29,74 +29,53 @@
                           </button>
                           <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
                             <div class="offcanvas-header">
-                              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+                              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+                                Auctions Menu
+                              </h5>
                               <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                             </div>
                             <div class="offcanvas-body">
+                                <div class="">
+                                    <h5>
+                                        {% if user.is_authenticated %}
+                                            Signed in as <strong>{{ user.username }}</strong>.
+                                        {% else %}
+                                            Not signed in.
+                                        {% endif %}
+                                    </h5>
+                                </div>
                               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                                 <li class="nav-item">
-                                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                  <a class="nav-link active" aria-current="page" href="{% url 'index' %}">
+                                    Active Listings
+                                  </a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" href="#">Link</a>
+                                  <a class="nav-link" href="{% url 'create_listing' %}">Create Listing</a>
                                 </li>
-                                <li class="nav-item dropdown">
-                                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Dropdown
-                                  </a>
-                                  <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li>
-                                      <hr class="dropdown-divider">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="">Categories</a>
+                                </li>
+                                {% if user.is_authenticated %}
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{% url 'watchlist_view' %}">My Watchlist</a>
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                  </ul>
-                                </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                                    </li>
+                                {% else %}
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{% url 'register' %}">Register</a>
+                                    </li>
+                                {% endif %}
                               </ul>
-                              <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-success" type="submit">Search</button>
-                              </form>
                             </div>
                           </div>
                         </div>
                       </nav>
-                    <!-- <div class="nav-itens">
-                        <div class="">
-                            {% if user.is_authenticated %}
-                                Signed in as <strong>{{ user.username }}</strong>.
-                            {% else %}
-                                Not signed in.
-                            {% endif %}
-                        </div>
-                        <ul class="nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'index' %}">Active Listings</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'create_listing' %}">Create Listing</a>
-                            </li>
-                            {% if user.is_authenticated %}
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'watchlist_view' %}">My Watchlist</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
-                                </li>
-                            {% else %}
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'login' %}">Log In</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'register' %}">Register</a>
-                                </li>
-                            {% endif %}
-                            <li>
-                                <a class="nav-link" href="">Categories</a>
-                            </li>
-                        </ul>
-                    </div> -->
                 </div>
             </div>
         </header>   
