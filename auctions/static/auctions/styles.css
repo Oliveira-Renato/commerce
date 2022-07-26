@@ -6,10 +6,7 @@
   box-sizing: border-box;
   transition: smooth;
 }
-ol, ul {
-  padding: 1rem;
-  margin: 0;
-}
+
 html {
   font-size: 62.5%;
   font-weight: 400;
@@ -26,10 +23,57 @@ img {
 
 body {
   overflow-x: hidden;
+  background: var(--color-tertiary);
 }
 
 ul {
   list-style: none;
+  margin: 2rem;
+  padding: 0;
+}
+
+main {
+  margin-top: 100px;
+}
+
+header .main-header .logo a > img {
+  width: 60px;
+  height: auto;
+  object-fit: contain;
+}
+header .main-header .menu-toggle {
+  position: absolute;
+  top: 0.3rem;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+header .main-header .menu-toggle > svg {
+  width: 40px;
+  height: 60px;
+  color: var(--color-quaternary);
+  transition: 0.3s;
+}
+header .main-header .menu-toggle > svg :hover {
+  color: var(--color-secondary);
+}
+header .main-header .menu-toggle > svg :active {
+  color: var(--color-primary);
+}
+header .container-nav {
+  height: 100%;
+  overflow: hidden;
+  /* max-height: 100%; */
+  z-index: 2;
+  width: 100%;
+  position: fixed;
+  background: linear-gradient(45deg, #FFF 4%, 0%, #333 100%);
+  top: 0;
+  right: -200%;
+  transition: all 0.5s ease-in-out;
 }
 
 .auto-grid {
@@ -40,7 +84,7 @@ ul {
 .auto-grid .col {
   padding: 3rem 1rem;
   text-align: center;
-  background: #eb4d4b;
+  background: var(--color-primary);
   color: #ffffff;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -104,6 +148,16 @@ ul {
   height: auto;
 }
 #listing .listing-info .listing-price > p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+#listing .listing-info .close-auction {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+#listing .listing-info .close-auction > p {
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.5rem;

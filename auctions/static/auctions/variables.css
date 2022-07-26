@@ -1,3 +1,11 @@
 :root {
     --auto-grid-min-size: 20rem;
+    /*==Colors==*/
+    --text-color: #FFF;
+    --text-color-dark: #333;
+    --color-primary: #A7414A;
+    --color-secondary: #282726;
+    --color-tertiary: #6A8A82;
+    --color-quaternary: #A37C27;
+    --color-quinary: #563838;
 }
