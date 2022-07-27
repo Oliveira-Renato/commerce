@@ -32,9 +32,21 @@ ul {
   margin: 2rem;
   padding: 0;
 }
+.form-group  {
+  input, textarea {
+    background: transparent;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+  }
+}
 
 main {
   margin-top: 100px;
+
+  h1, section h1 {
+    font-weight: 600;
+    font-size: 2.6rem;
+  }
 }
 header {
   .main-header {
@@ -85,23 +97,39 @@ header {
   }
 }
 
+.form-control {
+  border: 1px solid rgba(245,245,220,.2);
+  border-bottom: 1px solid rgba(111,78,55,.5);
+}
+.form-control:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 .25rem rgba(255,195,0,.25);
+}
 .auto-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
   grid-gap: 1rem;
+  margin-top: 12rem;
 
   .col {
-    padding: 3rem 1rem;
+    padding: 4rem 1rem 2rem;
     text-align: center;
-    background: var(--color-primary);
+    background-color: var(--color-primary);
     color: #ffffff;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     border-radius: 0.5rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    position: relative;
+    bottom: 0;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 25%);
+    margin-bottom: 6rem;
+
+    .img-item {
+      display: flex;
+      justify-content: center;
+    }
     &:hover {
       transform: translateY(-0.2rem);
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
     }  
     h2 {
         font-size: 2rem;
@@ -111,10 +139,12 @@ header {
         margin-bottom: 1rem;
     }
     img {
-        width: 280px;
-        height: 340px;
-        border-radius: 0.5rem;
-      }
+      width: 120px;
+      height: 130px;
+      border-radius: 0.5rem;
+      position: absolute;
+      top: -4.7rem;
+    }
     .desc-item {
         height: 50px;
         overflow: hidden;
@@ -125,21 +155,118 @@ header {
 #listing {
 
   .listing-info {
-    margin: 0 40px;
+    margin:12rem 40px 2rem;
     >h1 {
       font-size: 2.5rem;
       font-weight: 600;
       margin-bottom: 1rem;
       text-align: center;
     }
+    .card-auction {
+      position: relative;
+      background-color: var(--color-primary);
+      box-shadow: 0 4px 12px rgb(0 0 0 / 25%);
+      border-radius: 0.5rem;
+      color: #ffffff;
+      padding: 7rem 1rem 2rem;
+
+      @media (min-width: 700px) {
+        padding: 10rem 1rem 2rem;
+      }
+      @media (max-width: 360px) {
+        padding: 5.8rem 1rem 2rem;
+      }
+      @media (max-width: 320px) {
+        padding: 4rem 1rem 2rem;
+      }
+
+      .watch-on {
+        a {
+          text-decoration: none;
+          color: var(--color-secondary);
+          font-weight: 600;
+          font-size: .96rem;
+          svg {
+            padding-right: .3rem;
+          }
+        }
+      }
+    }
+    .bids {
+      border: 1px solid var(--color-quinary);
+      margin-top: 2rem;
+      padding: 2rem;
+      background: var(--color-secondary);
+      color: var(--teal);
+
+      h3 {
+        color: var(--color-quaternary);
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1.6rem;
+        text-align: center;
+      }
+      .header-bid {
+        display: flex;
+        justify-content: space-around;
+        color: var(--text-color);
+        text-transform: capitalize;
+        margin-bottom: 1.6rem;
+        background: var(--color-quaternary);
+      }
+      .bid {
+        border-bottom: 1px solid var(--color-quinary);
+        padding: 0 0 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-around;
+        align-content: center;
+        p {
+          margin: 0;
+        }
+      }
+      .form-group {
+        input, textarea {
+          background: transparent;
+          color: var(--text-color);
+          margin-bottom: 1rem;
+        }
+        .btn-primary:not(:disabled):not(.disabled):active {
+          box-shadow: var(--box-shadow-btn);
+        }
+        .d-flex {
+          justify-content:  center;
+        }
+        button {
+          padding: 0.2rem 2rem 0.2rem 1rem;
+          background: var(--color-quinary);
+          border: none;
+          >img {
+            width: 20px;
+            height: 25px;
+          }
+        }
+      }
+    }
     .listing-image {
-      display: block; 
-      width: 100%;
-      height: auto;
+      display: flex;
+      justify-content: center;
       margin-bottom: 1rem;
+
       > img {
-        width: 400px;
+        width: 300px;
         height: auto;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: -9.5rem;
+        border-radius: 0.5rem;
+        @media (max-width: 320px) {
+          width: 300px; 
+        }
+        @media (min-width: 768px) {
+          width: 300px;
+        }
       }
     }
     .listing-description {
@@ -147,7 +274,7 @@ header {
       width: 100%;
       height: auto;
       > p {
-        font-size: 1.5rem;
+        font-size: 1rem;
         font-weight: 400;
         line-height: 1.5rem;
         margin-bottom: 1rem;
@@ -161,6 +288,8 @@ header {
         font-size: 1.5rem;
         font-weight: 600;
         line-height: 1.5rem;
+        color: #dfdfdfdf;
+        text-shadow: 0 2px 6px var(--color-quinary);
       }
     }
     .close-auction {
