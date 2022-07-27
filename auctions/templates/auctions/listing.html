@@ -42,11 +42,16 @@
         </div>
         <div class="bids">
             {% if bids  %}
-                <h3>Bids</h3>
+                <div class="bids-title">
+                    <div class="bid-row">
+                        <h3>Bids</h3>
+                    </div>
+                </div>
                 <div class="header-bid">
                     <h5>user</h5>
                     <h5>bid</h5>
-                </div>  
+                </div>
+                  
                 {% for bid in bids %}
                     <div class="bid">
                         <p>{{ bid.user.username }}</p>
@@ -77,25 +82,31 @@
     </aside>
     <div class="comments-box mt-5 listing-info">
         <div class="comments">
-            <h3>Comments</h3>
+            <div class="comments-title">
+                <div class="comments-row">
+                    <h3>Comments</h3>
+                </div>
+            </div>
+           <div class="scroll-comments">
             {% if comments %}
                 {% for comment in comments %}
                     <div class="comment">
-                        <p>{{ comment.user.username }}</p>
+                        <strong>{{ comment.user.username }}</strong>
                         <p>{{ comment.comment }}</p>
                     </div>
                 {% endfor %}
             {% else %}
                 <p>No comments yet</p>
-            {% endif %}
+             {% endif %}
+           </div>
             {% if user.is_authenticated %}
                 <form action="{% url 'comments' listing.id %}" method="post">
                     <div class="form-group ">
                         {% csrf_token %}
-                        <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
-                    </div>
-                    <div class="button-container mt-2">
+                        <textarea class="form-control" id="comment" name="comment" rows="3" placeholder="Comment here..."></textarea>
+                        <div class="d-flex">
                             <button type="submit" class="btn btn-primary">Comment</button>
+                        </div>
                     </div>
                 </form>
             {% else %}

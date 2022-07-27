@@ -163,14 +163,9 @@ header .container-nav {
     padding: 10rem 1rem 2rem;
   }
 }
-@media (max-width: 360px) {
+@media (min-width: 370px) {
   #listing .listing-info .card-auction {
-    padding: 5.8rem 1rem 2rem;
-  }
-}
-@media (max-width: 320px) {
-  #listing .listing-info .card-auction {
-    padding: 4rem 1rem 2rem;
+    padding: 10rem 1rem 2rem;
   }
 }
 #listing .listing-info .card-auction .watch-on a {
@@ -182,21 +177,38 @@ header .container-nav {
 #listing .listing-info .card-auction .watch-on a svg {
   padding-right: 0.3rem;
 }
-#listing .listing-info .bids {
+#listing .listing-info .bids, #listing .listing-info .comments {
+  position: relative;
   border: 1px solid var(--color-quinary);
   margin-top: 2rem;
   padding: 2rem;
   background: var(--color-secondary);
   color: var(--teal);
+  border-radius: 0.5rem;
 }
-#listing .listing-info .bids h3 {
+#listing .listing-info .bids .bids-title, #listing .listing-info .bids .comments-title, #listing .listing-info .comments .bids-title, #listing .listing-info .comments .comments-title {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: var(--color-quinary);
+}
+#listing .listing-info .bids .bids-title .bid-row, #listing .listing-info .bids .bids-title .comments-row, #listing .listing-info .bids .comments-title .bid-row, #listing .listing-info .bids .comments-title .comments-row, #listing .listing-info .comments .bids-title .bid-row, #listing .listing-info .comments .bids-title .comments-row, #listing .listing-info .comments .comments-title .bid-row, #listing .listing-info .comments .comments-title .comments-row {
+  width: 100px;
+  height: 40px;
+  position: absolute;
+  top: -1.5rem;
+  background: var(--color-quinary);
+  border-radius: 1.5rem;
+}
+#listing .listing-info .bids .bids-title .bid-row h3, #listing .listing-info .bids .bids-title .comments-row h3, #listing .listing-info .bids .comments-title .bid-row h3, #listing .listing-info .bids .comments-title .comments-row h3, #listing .listing-info .comments .bids-title .bid-row h3, #listing .listing-info .comments .bids-title .comments-row h3, #listing .listing-info .comments .comments-title .bid-row h3, #listing .listing-info .comments .comments-title .comments-row h3 {
   color: var(--color-quaternary);
   text-transform: uppercase;
   font-weight: 600;
   font-size: 1.6rem;
   text-align: center;
+  padding: 0.2rem;
 }
-#listing .listing-info .bids .header-bid {
+#listing .listing-info .bids .header-bid, #listing .listing-info .comments .header-bid {
   display: flex;
   justify-content: space-around;
   color: var(--text-color);
@@ -204,7 +216,7 @@ header .container-nav {
   margin-bottom: 1.6rem;
   background: var(--color-quaternary);
 }
-#listing .listing-info .bids .bid {
+#listing .listing-info .bids .bid, #listing .listing-info .comments .bid {
   border-bottom: 1px solid var(--color-quinary);
   padding: 0 0 1rem;
   margin-bottom: 1rem;
@@ -212,26 +224,26 @@ header .container-nav {
   justify-content: space-around;
   align-content: center;
 }
-#listing .listing-info .bids .bid p {
+#listing .listing-info .bids .bid p, #listing .listing-info .comments .bid p {
   margin: 0;
 }
-#listing .listing-info .bids .form-group input, #listing .listing-info .bids .form-group textarea {
+#listing .listing-info .bids .form-group input, #listing .listing-info .bids .form-group textarea, #listing .listing-info .comments .form-group input, #listing .listing-info .comments .form-group textarea {
   background: transparent;
   color: var(--text-color);
   margin-bottom: 1rem;
 }
-#listing .listing-info .bids .form-group .btn-primary:not(:disabled):not(.disabled):active {
+#listing .listing-info .bids .form-group .btn-primary:not(:disabled):not(.disabled):active, #listing .listing-info .comments .form-group .btn-primary:not(:disabled):not(.disabled):active {
   box-shadow: var(--box-shadow-btn);
 }
-#listing .listing-info .bids .form-group .d-flex {
+#listing .listing-info .bids .form-group .d-flex, #listing .listing-info .comments .form-group .d-flex {
   justify-content: center;
 }
-#listing .listing-info .bids .form-group button {
+#listing .listing-info .bids .form-group button, #listing .listing-info .comments .form-group button {
   padding: 0.2rem 2rem 0.2rem 1rem;
   background: var(--color-quinary);
   border: none;
 }
-#listing .listing-info .bids .form-group button > img {
+#listing .listing-info .bids .form-group button > img, #listing .listing-info .comments .form-group button > img {
   width: 20px;
   height: 25px;
 }
@@ -291,6 +303,49 @@ header .container-nav {
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.5rem;
+}
+#listing .comments-box .comments {
+  background: var(--color-quinary);
+  color: var(--text-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-secondary);
+}
+#listing .comments-box .comments .comments-title .comments-row {
+  background: var(--color-secondary);
+  width: 162px;
+}
+#listing .comments-box .comments .comment {
+  background: var(--color-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  margin-bottom: 0.4rem;
+}
+#listing .comments-box .comments .comment strong {
+  font-size: 0.7rem;
+}
+#listing .comments-box .comments .comment p {
+  font-size: 0.9rem;
+  margin: 0;
+  word-break: break-all;
+}
+#listing .comments-box .comments form .form-group textarea {
+  background-blend-mode: multiply;
+  background: rgba(0, 0, 0, 0.25);
+}
+#listing .comments-box .comments form .form-group textarea::placeholder {
+  color: var(--color-quaternary);
+  opacity: 0.4;
+}
+#listing .comments-box .comments form .form-group button {
+  background: var(--color-secondary);
+  padding: 0.2rem 1rem;
+}
+#listing .comments-box .comments .scroll-comments {
+  overflow-y: scroll;
+  height: 300px;
+  margin-bottom: 1.6rem;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -173,11 +173,8 @@ header {
       @media (min-width: 700px) {
         padding: 10rem 1rem 2rem;
       }
-      @media (max-width: 360px) {
-        padding: 5.8rem 1rem 2rem;
-      }
-      @media (max-width: 320px) {
-        padding: 4rem 1rem 2rem;
+      @media (min-width: 370px) {
+        padding: 10rem 1rem 2rem;
       }
 
       .watch-on {
@@ -192,20 +189,41 @@ header {
         }
       }
     }
-    .bids {
+    .bids, .comments {
+      position: relative;
       border: 1px solid var(--color-quinary);
       margin-top: 2rem;
       padding: 2rem;
       background: var(--color-secondary);
       color: var(--teal);
+      border-radius: 0.5rem;
 
-      h3 {
-        color: var(--color-quaternary);
-        text-transform: uppercase;
-        font-weight: 600;
-        font-size: 1.6rem;
-        text-align: center;
+      .bids-title, .comments-title {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        background: var(--color-quinary);
+
+        .bid-row, .comments-row {
+          width: 100px;
+          height: 40px;
+          position: absolute;
+          top: -1.5rem;
+          background: var(--color-quinary);
+          border-radius: 1.5rem;
+
+          h3 {
+            color: var(--color-quaternary);
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 1.6rem;
+            text-align: center;
+            padding: .2rem;
+          }
+        }
       }
+
+      
       .header-bid {
         display: flex;
         justify-content: space-around;
@@ -300,6 +318,61 @@ header {
         font-size: 1.5rem;
         font-weight: 600;
         line-height: 1.5rem;
+      }
+    }
+  }
+  .comments-box {
+    .comments {
+      background: var(--color-quinary);
+      color: var(--text-color);
+      box-shadow: 0 4px 12px rgb(0 0 0 / 25%);
+      border: 1px solid var(--color-secondary);
+
+      .comments-title {
+        .comments-row {
+          background: var(--color-secondary);
+          width: 162px;
+          h3  {
+           
+          }
+        }
+      }
+      .comment {
+        background: var(--color-secondary);
+        padding: 0.5rem 1rem;
+        border-radius: 0.2rem;
+        margin-bottom: .4rem;
+        strong {
+          font-size: .7rem;
+        }
+        p {
+          font-size: .9rem;
+          margin: 0;
+          word-break: break-all;
+        }
+      }
+      form {
+        .form-group {
+          textarea {
+            background-blend-mode: multiply;
+            background: rgba(0,0,0,.25);
+          }
+          textarea::placeholder {
+            color: var(--color-quaternary);
+            opacity: .4;
+          }
+          button {
+            background: var(--color-secondary);
+            padding: 0.2rem 1rem;
+          }
+        }
+      }
+      .scroll-comments {
+        overflow-y: scroll;
+        height: 300px;
+        margin-bottom: 1.6rem;
+        display: flex;
+        flex-direction: column-reverse;
       }
     }
   } 

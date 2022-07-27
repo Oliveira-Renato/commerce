@@ -95,7 +95,7 @@ def listing(request, listing_id):
                 "listing": AuctionsListing.objects.get(id=listing_id),
                 "bids": Bids.objects.filter(listing=listing_id),
                 "watchlist": Watchlist.objects.filter(user=request.user, listing=listing_id),
-                "comments": comments
+                "comments": comments.order_by('-id')
             })
         
         return render(request, "auctions/listing.html", {
@@ -178,7 +178,7 @@ def comments(request, listing_id):
     else:
         return render(request, "auctions/listing.html", {
             "listing": AuctionsListing.objects.get(id=listing_id),
-            "comments": Comments.objects.filter(listing=listing_id)
+            "comments": Comments.objects.filter(listing=listing_id).order_by('-id')
         })
 
 def categories(request, category_id):
