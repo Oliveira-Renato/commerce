@@ -151,8 +151,7 @@ header {
     }
   }
 }
-
-#listing {
+#listing, #watchlist {
 
   .listing-info {
     margin:12rem 40px 2rem;
@@ -174,7 +173,7 @@ header {
         padding: 10rem 1rem 2rem;
       }
       @media (min-width: 370px) {
-        padding: 10rem 1rem 2rem;
+        padding: 7rem 1rem 2rem;
       }
 
       .watch-on {
@@ -277,13 +276,19 @@ header {
         display: flex;
         justify-content: center;
         position: absolute;
-        top: -9.5rem;
+        top: -4.5rem;
         border-radius: 0.5rem;
-        @media (max-width: 320px) {
-          width: 300px; 
+        @media (min-width: 330px) {
+          top: -5.5rem;
         }
-        @media (min-width: 768px) {
-          width: 300px;
+        @media (min-width: 355px) {
+          top: -6.5rem;
+        }
+        @media (min-width: 370px) {
+          top: -7.5rem;
+        }
+        @media (min-width: 700px) {
+          top: -8.5rem;
         }
       }
     }
@@ -376,4 +381,21 @@ header {
       }
     }
   } 
+}
+
+#watchlist {
+  .auto-grid {
+    .col {
+      padding: 4rem 1rem 2rem;
+      .listing-image {
+        img {
+          width: 120px;
+          height: 130px;
+          border-radius: 0.5rem;
+          position: absolute;
+          top: -4.7rem;
+        }
+      }
+    }
+  }
 }

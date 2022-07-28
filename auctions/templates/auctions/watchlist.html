@@ -1,34 +1,42 @@
 {% extends "auctions/layout.html" %}
 
 {% block body %}
-    <h1>My watchlist</h1>
-    {% if user.is_authenticated %}
-        {% if watchlist %}
-            <ul class="auto-grid">
-            {% for item in watchlist %}
-                <div class="col">
-                    <div class="watch-con">
-                        <a href="{% url 'watchlist' item.listing.id 1 %}">
-                            <span class="iconify" data-icon="fxemoji:eye"></span>remove to watchlist
+    <section id="watchlist">
+        <div class="watchlist-title">
+            <h1 class="text-center">My watchlist</h1>
+        </div>
+        {% if user.is_authenticated %}
+            {% if watchlist %}
+                <ul class="auto-grid listing-info">
+                {% for item in watchlist %}
+                    <div class="col card-auction">
+                        <div class="watch-on text-center">
+                            <a href="{% url 'watchlist' item.listing.id 1 %}">
+                                <span class="iconify" data-icon="fxemoji:eye"></span>remove to watchlist
+                            </a>
+                        </div>
+                        <h2>{{ item.listing.title }}</h2>
+                        <div class="listing-image text-center">
+                            <img src={{item.listing.image_url}}>
+                        </div>
+                        <div class="listing-description text-center">
+                            {{ item.listing.description}}
+                        </div>
+                        <div class="listing-price text-center">
+                            <p>Starting Bid ${{ item.listing.inicial_bid}}</p>
+                        </div>
+                        <a href="{% url 'listing' item.listing.id %}">
+                            <button ype="button" class="btn btn-dark">See more</button>
                         </a>
                     </div>
-                    <h2>{{ item.listing.title }}</h2>
-                    <li class="img-item">
-                        <img src={{item.listing.image_url}}>
-                    </li>
-                    <li class="desc-item">{{ item.listing.description}}</li>
-                    <li class="price-iten">${{ item.listing.inicial_bid}}</li>
-                    <a href="{% url 'listing' item.listing.id %}">
-                        <button class="">See more</button>
-                    </a>
-                </div>
-            {% endfor %}
-            </ul>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <p>You have no items in your watchlist</p>
+            {% endif %}
         {% else %}
-            <p>You have no items in your watchlist</p>
+            <p>Please <a href="{% url 'login' %}">log in</a> to see your watchlist</p>
         {% endif %}
-    {% else %}
-        <p>Please <a href="{% url 'login' %}">log in</a> to see your watchlist</p>
-    {% endif %}
+    </section>
     
 {% endblock %}
