@@ -5,21 +5,23 @@
         <h1>Auctions</h1>
         <h5>Active listings</h5>
     </div>
-     <ul class="auto-grid">
-        {% for t in teste %}
-            {% if t.active == 1 %}
-            <div class="col">
-                <h1>{{ t.title}}</h1>
-                <li class="img-item">
-                    <img src={{t.image_url}}>
-                </li>
-                <li class="desc-item">{{ t.description}}</li>
-                <li class="price-iten">${{ t.inicial_bid}}</li>
-                <a href="{% url 'listing' t.id %}">
-                    <button  type="button" class="btn btn-dark">See more</button>
-                </a>
-            </div>
-            {% endif %}
-        {% endfor %}
-    </ul> 
+     <section id="home">
+        <ul class="auto-grid">
+            {% for t in teste %}
+                {% if t.active == 1 %}
+                <div class="col">
+                    <h1>{{ t.title}}</h1>
+                    <li class="img-item">
+                        <img src={{t.image_url}}>
+                    </li>
+                    <li class="desc-item">{{ t.description}}</li>
+                    <li class="price-iten">${{ t.inicial_bid}}</li>
+                    <a href="{% url 'listing' t.id %}">
+                        <button  type="button" class="btn btn-dark">See more</button>
+                    </a>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </ul> 
+     </section>
 {% endblock %}

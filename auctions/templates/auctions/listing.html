@@ -33,7 +33,9 @@
             </div>
             <h2 class="text-center">{{ listing.title }}</h2>
             <div class="listing-image text-center">
-                <img src="{{ listing.image_url }}" alt="">
+                <div class="fix-size-img">
+                    <img src="{{ listing.image_url }}" alt="">
+                </div>
             </div>
             <div class="listing-description text-center">
                 <p>{{ listing.description }}</p>
