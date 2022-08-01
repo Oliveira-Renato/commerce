@@ -259,17 +259,24 @@ section {
         margin-bottom: 1.6rem;
         background: var(--color-quaternary);
       }
-      .bid {
-        border-bottom: 1px solid var(--color-quinary);
-        padding: 0 0 1rem;
-        margin-bottom: 1rem;
+
+      .bid-container {
         display: flex;
-        justify-content: space-around;
-        align-content: center;
-        p {
-          margin: 0;
+        flex-direction: column-reverse;
+
+        .bid {
+          border-bottom: 1px solid var(--color-quinary);
+          padding: 0 0 1rem;
+          margin-bottom: 1rem;
+          display: flex;
+          justify-content: space-around;
+          align-content: center;
+          p {
+            margin: 0;
+          }
         }
       }
+      
       .form-group {
         input, textarea {
           background: transparent;
@@ -405,7 +412,7 @@ section {
         }
       }
       .scroll-comments {
-        overflow-y: scroll;
+        overflow-y: auto;
         height: 300px;
         margin-bottom: 1.6rem;
         display: flex;
@@ -414,7 +421,6 @@ section {
     }
   } 
 }
-
 #watchlist {
   .auto-grid {
     margin: 12rem 20px 2rem;
@@ -432,3 +438,39 @@ section {
     }
   }
 }
+#category {
+  .category-list {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+  ul {
+    list-style: none;
+    li {
+      a {
+        position: relative;
+        text-decoration: none;
+        color: var(--color-quinary);
+        transition: all .35s ease;
+        &:hover {
+          color: var(--color-secondary);
+          &:before{
+            width: 100%;
+          }
+        }
+
+        &::before{
+          content: "";
+          position: absolute;
+          width: 0%;
+          height: 2px;
+          background: var(--color-secondary);
+          transition: width .3s ease 0s;
+          bottom: 0;
+          left: 0;
+        }
+      }
+      
+      
+    }
+  }
+} 

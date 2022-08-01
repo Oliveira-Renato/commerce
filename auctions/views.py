@@ -93,7 +93,7 @@ def listing(request, listing_id):
         elif comments:
             return render(request, "auctions/listing.html", {
                 "listing": AuctionsListing.objects.get(id=listing_id),
-                "bids": Bids.objects.filter(listing=listing_id),
+                "bids": Bids.objects.filter(listing=listing_id).order_by('-id')[:3],
                 "watchlist": Watchlist.objects.filter(user=request.user, listing=listing_id),
                 "comments": comments.order_by('-id')
             })

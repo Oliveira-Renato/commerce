@@ -56,12 +56,14 @@
                     <h5>bid</h5>
                 </div>
                   
-                {% for bid in bids %}
+                <div class="bid-container">
+                    {% for bid in bids %}
                     <div class="bid">
                         <p>{{ bid.user.username }}</p>
                         <p>${{ bid.bid }}</p>
                     </div>
-                {% endfor %}
+                    {% endfor %}
+                </div>
             {% else %}
                 <h3>No bids yet</h3>
                 <p>{{bids}}</p>

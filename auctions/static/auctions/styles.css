@@ -255,7 +255,11 @@ header .container-nav {
   margin-bottom: 1.6rem;
   background: var(--color-quaternary);
 }
-#listing .listing-info .bids .bid, #listing .listing-info .comments .bid, #watchlist .listing-info .bids .bid, #watchlist .listing-info .comments .bid {
+#listing .listing-info .bids .bid-container, #listing .listing-info .comments .bid-container, #watchlist .listing-info .bids .bid-container, #watchlist .listing-info .comments .bid-container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+#listing .listing-info .bids .bid-container .bid, #listing .listing-info .comments .bid-container .bid, #watchlist .listing-info .bids .bid-container .bid, #watchlist .listing-info .comments .bid-container .bid {
   border-bottom: 1px solid var(--color-quinary);
   padding: 0 0 1rem;
   margin-bottom: 1rem;
@@ -263,7 +267,7 @@ header .container-nav {
   justify-content: space-around;
   align-content: center;
 }
-#listing .listing-info .bids .bid p, #listing .listing-info .comments .bid p, #watchlist .listing-info .bids .bid p, #watchlist .listing-info .comments .bid p {
+#listing .listing-info .bids .bid-container .bid p, #listing .listing-info .comments .bid-container .bid p, #watchlist .listing-info .bids .bid-container .bid p, #watchlist .listing-info .comments .bid-container .bid p {
   margin: 0;
 }
 #listing .listing-info .bids .form-group input, #listing .listing-info .bids .form-group textarea, #listing .listing-info .comments .form-group input, #listing .listing-info .comments .form-group textarea, #watchlist .listing-info .bids .form-group input, #watchlist .listing-info .bids .form-group textarea, #watchlist .listing-info .comments .form-group input, #watchlist .listing-info .comments .form-group textarea {
@@ -385,7 +389,7 @@ header .container-nav {
   padding: 0.2rem 1rem;
 }
 #listing .comments-box .comments .scroll-comments, #watchlist .comments-box .comments .scroll-comments {
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 300px;
   margin-bottom: 1.6rem;
   display: flex;
@@ -404,6 +408,36 @@ header .container-nav {
   border-radius: 0.5rem;
   position: absolute;
   top: -4.7rem;
+}
+
+#category .category-list {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+#category ul {
+  list-style: none;
+}
+#category ul li a {
+  position: relative;
+  text-decoration: none;
+  color: var(--color-quinary);
+  transition: all 0.35s ease;
+}
+#category ul li a:hover {
+  color: var(--color-secondary);
+}
+#category ul li a:hover:before {
+  width: 100%;
+}
+#category ul li a::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: var(--color-secondary);
+  transition: width 0.3s ease 0s;
+  bottom: 0;
+  left: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
