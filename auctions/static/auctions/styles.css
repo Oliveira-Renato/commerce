@@ -410,6 +410,20 @@ header .container-nav {
   top: -4.7rem;
 }
 
+#category .go-back-category {
+  margin: 2rem;
+  font-size: 4.2rem;
+}
+#category .go-back-category svg path {
+  fill: var(--color-quinary);
+  transition: fill 0.3s ease-in-out;
+}
+#category .go-back-category svg path:hover {
+  fill: var(--color-secondary);
+}
+#category .caio-color {
+  color: #e00;
+}
 #category .category-list {
   font-size: 1.4rem;
   font-weight: 500;
@@ -439,6 +453,52 @@ header .container-nav {
   transition: width 0.3s ease 0s;
   bottom: 0;
   left: 0;
+}
+
+#login, #register {
+  overflow: hidden;
+  margin-top: 7rem;
+}
+#login .login-container, #login .register-container, #register .login-container, #register .register-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+}
+#login .login-container .form-group input, #login .register-container .form-group input, #register .login-container .form-group input, #register .register-container .form-group input {
+  background-color: var(--color-quinary);
+  border: none;
+  color: var(--text-color);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 100%;
+  border: 2px solid var(--color-secondary);
+  transition: all 0.5s ease-in-out;
+  border-radius: 5px 5px 5px 5px;
+}
+#login .login-container .form-group input:focus, #login .register-container .form-group input:focus, #register .login-container .form-group input:focus, #register .register-container .form-group input:focus {
+  background-color: var(--color-quaternary);
+  border-bottom: 2px solid var(--color-quinary);
+  outline: none;
+}
+#login .login-container .form-group input::placeholder, #login .register-container .form-group input::placeholder, #register .login-container .form-group input::placeholder, #register .register-container .form-group input::placeholder {
+  color: var(--color-quaternary);
+  opacity: 0.8;
+  font-weight: 500;
+}
+#login .login-container .login-row a, #login .login-container .register-row a, #login .register-container .login-row a, #login .register-container .register-row a, #register .login-container .login-row a, #register .login-container .register-row a, #register .register-container .login-row a, #register .register-container .register-row a {
+  color: var(--color-quinary);
+  text-decoration: underline;
+  font-weight: 600;
+}
+#login .login-container .login-button, #login .login-container .register-button, #login .register-container .login-button, #login .register-container .register-button, #register .login-container .login-button, #register .login-container .register-button, #register .register-container .login-button, #register .register-container .register-button {
+  margin-bottom: 2.6rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

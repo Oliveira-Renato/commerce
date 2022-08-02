@@ -15,7 +15,9 @@
     </div>
   {% else %}
     <div class="go-back-category">
-      <a href="{% url 'categories' 0 %}">Go back to categories</a>
+      <a href="{% url 'categories' 0 %}">
+        <span class="iconify" data-icon="emojione-v1:back-arrow"></span>
+      </a>
     </div>
 
     <ul class="auto-grid">

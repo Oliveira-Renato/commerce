@@ -439,6 +439,23 @@ section {
   }
 }
 #category {
+  .go-back-category {
+    margin: 2rem;
+    font-size: 4.2rem;
+    svg {
+      path {
+        fill: var(--color-quinary);
+        transition: fill 0.3s ease-in-out;
+
+        &:hover {
+          fill: var(--color-secondary);
+        }
+      }
+    }
+  }
+  .caio-color {
+    color: #e00;
+  }
   .category-list {
     font-size: 1.4rem;
     font-weight: 500;
@@ -473,3 +490,54 @@ section {
     }
   }
 } 
+#login, #register {
+  overflow: hidden;
+  margin-top: 7rem;
+
+  .login-container, .register-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;   
+    padding: 2rem;
+
+    .form-group {
+      input {
+        background-color: var(--color-quinary);
+        border: none;
+        color: var(--text-color);
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 5px;
+        width: 100%;
+        border: 2px solid var(--color-secondary);
+        transition: all 0.5s ease-in-out;
+        border-radius: 5px 5px 5px 5px;
+        &:focus{
+            background-color: var(--color-quaternary);
+            border-bottom: 2px solid var(--color-quinary);
+            outline: none;
+        }
+        &::placeholder {
+          color: var(--color-quaternary);
+          opacity: .8;
+          font-weight: 500;
+        }
+      }
+    }
+    .login-row, .register-row {
+        a {
+          color: var(--color-quinary);
+          text-decoration: underline;
+          font-weight: 600;
+      }
+    }
+    .login-button, .register-button {
+      margin-bottom: 2.6rem;
+    }
+  }
+}
