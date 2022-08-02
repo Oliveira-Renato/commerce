@@ -20,17 +20,22 @@
       </a>
     </div>
 
-    <ul class="auto-grid">
+    <ul class="auto-grid listing-info">
       {% for item in listings %}
-          <div class="col">
+          <div class="col  card-auction">
               <h2>{{ item.title }}</h2>
-              <li class="img-item">
-                  <img src={{item.image_url}}>
-              </li>
-              <li class="desc-item">{{ item.description}}</li>
-              <li class="price-iten">${{ item.inicial_bid}}</li>
+
+              <div class="listing-image text-center">
+                <img src={{item.image_url}}>
+              </div>
+              <div class="listing-description text-center">
+                {{ item.description}}
+              </div>
+              <div class="listing-price text-center">
+                <p>Starting Bid ${{item.inicial_bid}}</p>
+              </div>
               <a href="{% url 'listing' item.id %}">
-                  <button class="">See more</button>
+                  <button  class="btn btn-dark">See more</button>
               </a>
           </div>
       {% endfor %}

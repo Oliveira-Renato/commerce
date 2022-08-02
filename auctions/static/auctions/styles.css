@@ -165,31 +165,38 @@ header .container-nav {
   overflow: hidden;
 }
 
-#listing .listing-info, #watchlist .listing-info {
+#home {
+  margin-top: 7rem;
+}
+
+#listing .listing-title h1, #watchlist .listing-title h1, #category .listing-title h1 {
+  margin-top: 7rem;
+}
+#listing .listing-info, #watchlist .listing-info, #category .listing-info {
   margin: 12rem 40px 2rem;
 }
 @media (min-width: 700px) {
-  #listing .listing-info, #watchlist .listing-info {
+  #listing .listing-info, #watchlist .listing-info, #category .listing-info {
     margin: 17rem 120px 2rem;
   }
 }
 @media (min-width: 1024px) {
-  #listing .listing-info, #watchlist .listing-info {
+  #listing .listing-info, #watchlist .listing-info, #category .listing-info {
     margin: 17rem 220px 2rem;
   }
 }
 @media (min-width: 1284px) {
-  #listing .listing-info, #watchlist .listing-info {
+  #listing .listing-info, #watchlist .listing-info, #category .listing-info {
     margin: 17rem 420px 2rem;
   }
 }
-#listing .listing-info > h1, #watchlist .listing-info > h1 {
+#listing .listing-info > h1, #watchlist .listing-info > h1, #category .listing-info > h1 {
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
   text-align: center;
 }
-#listing .listing-info .card-auction, #watchlist .listing-info .card-auction {
+#listing .listing-info .card-auction, #watchlist .listing-info .card-auction, #category .listing-info .card-auction {
   position: relative;
   background-color: var(--color-primary);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
@@ -198,25 +205,25 @@ header .container-nav {
   padding: 7rem 1rem 2rem;
 }
 @media (min-width: 700px) {
-  #listing .listing-info .card-auction, #watchlist .listing-info .card-auction {
+  #listing .listing-info .card-auction, #watchlist .listing-info .card-auction, #category .listing-info .card-auction {
     padding: 10rem 1rem 2rem;
   }
 }
 @media (min-width: 370px) {
-  #listing .listing-info .card-auction, #watchlist .listing-info .card-auction {
+  #listing .listing-info .card-auction, #watchlist .listing-info .card-auction, #category .listing-info .card-auction {
     padding: 7rem 1rem 2rem;
   }
 }
-#listing .listing-info .card-auction .watch-on a, #watchlist .listing-info .card-auction .watch-on a {
+#listing .listing-info .card-auction .watch-on a, #watchlist .listing-info .card-auction .watch-on a, #category .listing-info .card-auction .watch-on a {
   text-decoration: none;
   color: var(--color-secondary);
   font-weight: 600;
   font-size: 0.96rem;
 }
-#listing .listing-info .card-auction .watch-on a svg, #watchlist .listing-info .card-auction .watch-on a svg {
+#listing .listing-info .card-auction .watch-on a svg, #watchlist .listing-info .card-auction .watch-on a svg, #category .listing-info .card-auction .watch-on a svg {
   padding-right: 0.3rem;
 }
-#listing .listing-info .bids, #listing .listing-info .comments, #watchlist .listing-info .bids, #watchlist .listing-info .comments {
+#listing .listing-info .bids, #listing .listing-info .comments, #watchlist .listing-info .bids, #watchlist .listing-info .comments, #category .listing-info .bids, #category .listing-info .comments {
   position: relative;
   border: 1px solid var(--color-quinary);
   margin-top: 2rem;
@@ -225,13 +232,13 @@ header .container-nav {
   color: var(--teal);
   border-radius: 0.5rem;
 }
-#listing .listing-info .bids .bids-title, #listing .listing-info .bids .comments-title, #listing .listing-info .comments .bids-title, #listing .listing-info .comments .comments-title, #watchlist .listing-info .bids .bids-title, #watchlist .listing-info .bids .comments-title, #watchlist .listing-info .comments .bids-title, #watchlist .listing-info .comments .comments-title {
+#listing .listing-info .bids .bids-title, #listing .listing-info .bids .comments-title, #listing .listing-info .comments .bids-title, #listing .listing-info .comments .comments-title, #watchlist .listing-info .bids .bids-title, #watchlist .listing-info .bids .comments-title, #watchlist .listing-info .comments .bids-title, #watchlist .listing-info .comments .comments-title, #category .listing-info .bids .bids-title, #category .listing-info .bids .comments-title, #category .listing-info .comments .bids-title, #category .listing-info .comments .comments-title {
   display: flex;
   justify-content: center;
   align-content: center;
   background: var(--color-quinary);
 }
-#listing .listing-info .bids .bids-title .bid-row, #listing .listing-info .bids .bids-title .comments-row, #listing .listing-info .bids .comments-title .bid-row, #listing .listing-info .bids .comments-title .comments-row, #listing .listing-info .comments .bids-title .bid-row, #listing .listing-info .comments .bids-title .comments-row, #listing .listing-info .comments .comments-title .bid-row, #listing .listing-info .comments .comments-title .comments-row, #watchlist .listing-info .bids .bids-title .bid-row, #watchlist .listing-info .bids .bids-title .comments-row, #watchlist .listing-info .bids .comments-title .bid-row, #watchlist .listing-info .bids .comments-title .comments-row, #watchlist .listing-info .comments .bids-title .bid-row, #watchlist .listing-info .comments .bids-title .comments-row, #watchlist .listing-info .comments .comments-title .bid-row, #watchlist .listing-info .comments .comments-title .comments-row {
+#listing .listing-info .bids .bids-title .bid-row, #listing .listing-info .bids .bids-title .comments-row, #listing .listing-info .bids .comments-title .bid-row, #listing .listing-info .bids .comments-title .comments-row, #listing .listing-info .comments .bids-title .bid-row, #listing .listing-info .comments .bids-title .comments-row, #listing .listing-info .comments .comments-title .bid-row, #listing .listing-info .comments .comments-title .comments-row, #watchlist .listing-info .bids .bids-title .bid-row, #watchlist .listing-info .bids .bids-title .comments-row, #watchlist .listing-info .bids .comments-title .bid-row, #watchlist .listing-info .bids .comments-title .comments-row, #watchlist .listing-info .comments .bids-title .bid-row, #watchlist .listing-info .comments .bids-title .comments-row, #watchlist .listing-info .comments .comments-title .bid-row, #watchlist .listing-info .comments .comments-title .comments-row, #category .listing-info .bids .bids-title .bid-row, #category .listing-info .bids .bids-title .comments-row, #category .listing-info .bids .comments-title .bid-row, #category .listing-info .bids .comments-title .comments-row, #category .listing-info .comments .bids-title .bid-row, #category .listing-info .comments .bids-title .comments-row, #category .listing-info .comments .comments-title .bid-row, #category .listing-info .comments .comments-title .comments-row {
   width: 100px;
   height: 40px;
   position: absolute;
@@ -239,7 +246,7 @@ header .container-nav {
   background: var(--color-quinary);
   border-radius: 1.5rem;
 }
-#listing .listing-info .bids .bids-title .bid-row h3, #listing .listing-info .bids .bids-title .comments-row h3, #listing .listing-info .bids .comments-title .bid-row h3, #listing .listing-info .bids .comments-title .comments-row h3, #listing .listing-info .comments .bids-title .bid-row h3, #listing .listing-info .comments .bids-title .comments-row h3, #listing .listing-info .comments .comments-title .bid-row h3, #listing .listing-info .comments .comments-title .comments-row h3, #watchlist .listing-info .bids .bids-title .bid-row h3, #watchlist .listing-info .bids .bids-title .comments-row h3, #watchlist .listing-info .bids .comments-title .bid-row h3, #watchlist .listing-info .bids .comments-title .comments-row h3, #watchlist .listing-info .comments .bids-title .bid-row h3, #watchlist .listing-info .comments .bids-title .comments-row h3, #watchlist .listing-info .comments .comments-title .bid-row h3, #watchlist .listing-info .comments .comments-title .comments-row h3 {
+#listing .listing-info .bids .bids-title .bid-row h3, #listing .listing-info .bids .bids-title .comments-row h3, #listing .listing-info .bids .comments-title .bid-row h3, #listing .listing-info .bids .comments-title .comments-row h3, #listing .listing-info .comments .bids-title .bid-row h3, #listing .listing-info .comments .bids-title .comments-row h3, #listing .listing-info .comments .comments-title .bid-row h3, #listing .listing-info .comments .comments-title .comments-row h3, #watchlist .listing-info .bids .bids-title .bid-row h3, #watchlist .listing-info .bids .bids-title .comments-row h3, #watchlist .listing-info .bids .comments-title .bid-row h3, #watchlist .listing-info .bids .comments-title .comments-row h3, #watchlist .listing-info .comments .bids-title .bid-row h3, #watchlist .listing-info .comments .bids-title .comments-row h3, #watchlist .listing-info .comments .comments-title .bid-row h3, #watchlist .listing-info .comments .comments-title .comments-row h3, #category .listing-info .bids .bids-title .bid-row h3, #category .listing-info .bids .bids-title .comments-row h3, #category .listing-info .bids .comments-title .bid-row h3, #category .listing-info .bids .comments-title .comments-row h3, #category .listing-info .comments .bids-title .bid-row h3, #category .listing-info .comments .bids-title .comments-row h3, #category .listing-info .comments .comments-title .bid-row h3, #category .listing-info .comments .comments-title .comments-row h3 {
   color: var(--color-quaternary);
   text-transform: uppercase;
   font-weight: 600;
@@ -247,7 +254,7 @@ header .container-nav {
   text-align: center;
   padding: 0.2rem;
 }
-#listing .listing-info .bids .header-bid, #listing .listing-info .comments .header-bid, #watchlist .listing-info .bids .header-bid, #watchlist .listing-info .comments .header-bid {
+#listing .listing-info .bids .header-bid, #listing .listing-info .comments .header-bid, #watchlist .listing-info .bids .header-bid, #watchlist .listing-info .comments .header-bid, #category .listing-info .bids .header-bid, #category .listing-info .comments .header-bid {
   display: flex;
   justify-content: space-around;
   color: var(--text-color);
@@ -255,11 +262,11 @@ header .container-nav {
   margin-bottom: 1.6rem;
   background: var(--color-quaternary);
 }
-#listing .listing-info .bids .bid-container, #listing .listing-info .comments .bid-container, #watchlist .listing-info .bids .bid-container, #watchlist .listing-info .comments .bid-container {
+#listing .listing-info .bids .bid-container, #listing .listing-info .comments .bid-container, #watchlist .listing-info .bids .bid-container, #watchlist .listing-info .comments .bid-container, #category .listing-info .bids .bid-container, #category .listing-info .comments .bid-container {
   display: flex;
   flex-direction: column-reverse;
 }
-#listing .listing-info .bids .bid-container .bid, #listing .listing-info .comments .bid-container .bid, #watchlist .listing-info .bids .bid-container .bid, #watchlist .listing-info .comments .bid-container .bid {
+#listing .listing-info .bids .bid-container .bid, #listing .listing-info .comments .bid-container .bid, #watchlist .listing-info .bids .bid-container .bid, #watchlist .listing-info .comments .bid-container .bid, #category .listing-info .bids .bid-container .bid, #category .listing-info .comments .bid-container .bid {
   border-bottom: 1px solid var(--color-quinary);
   padding: 0 0 1rem;
   margin-bottom: 1rem;
@@ -267,35 +274,35 @@ header .container-nav {
   justify-content: space-around;
   align-content: center;
 }
-#listing .listing-info .bids .bid-container .bid p, #listing .listing-info .comments .bid-container .bid p, #watchlist .listing-info .bids .bid-container .bid p, #watchlist .listing-info .comments .bid-container .bid p {
+#listing .listing-info .bids .bid-container .bid p, #listing .listing-info .comments .bid-container .bid p, #watchlist .listing-info .bids .bid-container .bid p, #watchlist .listing-info .comments .bid-container .bid p, #category .listing-info .bids .bid-container .bid p, #category .listing-info .comments .bid-container .bid p {
   margin: 0;
 }
-#listing .listing-info .bids .form-group input, #listing .listing-info .bids .form-group textarea, #listing .listing-info .comments .form-group input, #listing .listing-info .comments .form-group textarea, #watchlist .listing-info .bids .form-group input, #watchlist .listing-info .bids .form-group textarea, #watchlist .listing-info .comments .form-group input, #watchlist .listing-info .comments .form-group textarea {
+#listing .listing-info .bids .form-group input, #listing .listing-info .bids .form-group textarea, #listing .listing-info .comments .form-group input, #listing .listing-info .comments .form-group textarea, #watchlist .listing-info .bids .form-group input, #watchlist .listing-info .bids .form-group textarea, #watchlist .listing-info .comments .form-group input, #watchlist .listing-info .comments .form-group textarea, #category .listing-info .bids .form-group input, #category .listing-info .bids .form-group textarea, #category .listing-info .comments .form-group input, #category .listing-info .comments .form-group textarea {
   background: transparent;
   color: var(--text-color);
   margin-bottom: 1rem;
 }
-#listing .listing-info .bids .form-group .btn-primary:not(:disabled):not(.disabled):active, #listing .listing-info .comments .form-group .btn-primary:not(:disabled):not(.disabled):active, #watchlist .listing-info .bids .form-group .btn-primary:not(:disabled):not(.disabled):active, #watchlist .listing-info .comments .form-group .btn-primary:not(:disabled):not(.disabled):active {
+#listing .listing-info .bids .form-group .btn-primary:not(:disabled):not(.disabled):active, #listing .listing-info .comments .form-group .btn-primary:not(:disabled):not(.disabled):active, #watchlist .listing-info .bids .form-group .btn-primary:not(:disabled):not(.disabled):active, #watchlist .listing-info .comments .form-group .btn-primary:not(:disabled):not(.disabled):active, #category .listing-info .bids .form-group .btn-primary:not(:disabled):not(.disabled):active, #category .listing-info .comments .form-group .btn-primary:not(:disabled):not(.disabled):active {
   box-shadow: var(--box-shadow-btn);
 }
-#listing .listing-info .bids .form-group .d-flex, #listing .listing-info .comments .form-group .d-flex, #watchlist .listing-info .bids .form-group .d-flex, #watchlist .listing-info .comments .form-group .d-flex {
+#listing .listing-info .bids .form-group .d-flex, #listing .listing-info .comments .form-group .d-flex, #watchlist .listing-info .bids .form-group .d-flex, #watchlist .listing-info .comments .form-group .d-flex, #category .listing-info .bids .form-group .d-flex, #category .listing-info .comments .form-group .d-flex {
   justify-content: center;
 }
-#listing .listing-info .bids .form-group button, #listing .listing-info .comments .form-group button, #watchlist .listing-info .bids .form-group button, #watchlist .listing-info .comments .form-group button {
+#listing .listing-info .bids .form-group button, #listing .listing-info .comments .form-group button, #watchlist .listing-info .bids .form-group button, #watchlist .listing-info .comments .form-group button, #category .listing-info .bids .form-group button, #category .listing-info .comments .form-group button {
   padding: 0.2rem 2rem 0.2rem 1rem;
   background: var(--color-quinary);
   border: none;
 }
-#listing .listing-info .bids .form-group button > img, #listing .listing-info .comments .form-group button > img, #watchlist .listing-info .bids .form-group button > img, #watchlist .listing-info .comments .form-group button > img {
+#listing .listing-info .bids .form-group button > img, #listing .listing-info .comments .form-group button > img, #watchlist .listing-info .bids .form-group button > img, #watchlist .listing-info .comments .form-group button > img, #category .listing-info .bids .form-group button > img, #category .listing-info .comments .form-group button > img {
   width: 20px;
   height: 25px;
 }
-#listing .listing-info .listing-image, #watchlist .listing-info .listing-image {
+#listing .listing-info .listing-image, #watchlist .listing-info .listing-image, #category .listing-info .listing-image {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
 }
-#listing .listing-info .listing-image .fix-size-img, #watchlist .listing-info .listing-image .fix-size-img {
+#listing .listing-info .listing-image .fix-size-img, #watchlist .listing-info .listing-image .fix-size-img, #category .listing-info .listing-image .fix-size-img {
   position: absolute;
   top: -7.5rem;
   background: var(--color-secondary);
@@ -308,87 +315,87 @@ header .container-nav {
   overflow: hidden;
 }
 @media (min-width: 700px) {
-  #listing .listing-info .listing-image .fix-size-img, #watchlist .listing-info .listing-image .fix-size-img {
+  #listing .listing-info .listing-image .fix-size-img, #watchlist .listing-info .listing-image .fix-size-img, #category .listing-info .listing-image .fix-size-img {
     width: 350px;
     height: 320px;
     top: -13.5rem;
   }
 }
-#listing .listing-info .listing-image .fix-size-img > img, #watchlist .listing-info .listing-image .fix-size-img > img {
+#listing .listing-info .listing-image .fix-size-img > img, #watchlist .listing-info .listing-image .fix-size-img > img, #category .listing-info .listing-image .fix-size-img > img {
   border-radius: 0.5%;
   margin: auto 0;
   padding: 0.2rem 0.8rem;
 }
-#listing .listing-info .listing-description, #watchlist .listing-info .listing-description {
+#listing .listing-info .listing-description, #watchlist .listing-info .listing-description, #category .listing-info .listing-description {
   display: block;
   width: 100%;
   height: auto;
 }
-#listing .listing-info .listing-description > p, #watchlist .listing-info .listing-description > p {
+#listing .listing-info .listing-description > p, #watchlist .listing-info .listing-description > p, #category .listing-info .listing-description > p {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5rem;
   margin-bottom: 1rem;
 }
-#listing .listing-info .listing-price, #watchlist .listing-info .listing-price {
+#listing .listing-info .listing-price, #watchlist .listing-info .listing-price, #category .listing-info .listing-price {
   display: block;
   width: 100%;
   height: auto;
 }
-#listing .listing-info .listing-price > p, #watchlist .listing-info .listing-price > p {
+#listing .listing-info .listing-price > p, #watchlist .listing-info .listing-price > p, #category .listing-info .listing-price > p {
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.5rem;
   color: #dfdfdfdf;
   text-shadow: 0 2px 6px var(--color-quinary);
 }
-#listing .listing-info .close-auction, #watchlist .listing-info .close-auction {
+#listing .listing-info .close-auction, #watchlist .listing-info .close-auction, #category .listing-info .close-auction {
   display: block;
   width: 100%;
   height: auto;
 }
-#listing .listing-info .close-auction > p, #watchlist .listing-info .close-auction > p {
+#listing .listing-info .close-auction > p, #watchlist .listing-info .close-auction > p, #category .listing-info .close-auction > p {
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.5rem;
 }
-#listing .comments-box .comments, #watchlist .comments-box .comments {
+#listing .comments-box .comments, #watchlist .comments-box .comments, #category .comments-box .comments {
   background: var(--color-quinary);
   color: var(--text-color);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   border: 1px solid var(--color-secondary);
 }
-#listing .comments-box .comments .comments-title .comments-row, #watchlist .comments-box .comments .comments-title .comments-row {
+#listing .comments-box .comments .comments-title .comments-row, #watchlist .comments-box .comments .comments-title .comments-row, #category .comments-box .comments .comments-title .comments-row {
   background: var(--color-secondary);
   width: 162px;
 }
-#listing .comments-box .comments .comment, #watchlist .comments-box .comments .comment {
+#listing .comments-box .comments .comment, #watchlist .comments-box .comments .comment, #category .comments-box .comments .comment {
   background: var(--color-secondary);
   padding: 0.5rem 1rem;
   border-radius: 0.2rem;
   margin-bottom: 0.4rem;
 }
-#listing .comments-box .comments .comment strong, #watchlist .comments-box .comments .comment strong {
+#listing .comments-box .comments .comment strong, #watchlist .comments-box .comments .comment strong, #category .comments-box .comments .comment strong {
   font-size: 0.7rem;
 }
-#listing .comments-box .comments .comment p, #watchlist .comments-box .comments .comment p {
+#listing .comments-box .comments .comment p, #watchlist .comments-box .comments .comment p, #category .comments-box .comments .comment p {
   font-size: 0.9rem;
   margin: 0;
   word-break: break-all;
 }
-#listing .comments-box .comments form .form-group textarea, #watchlist .comments-box .comments form .form-group textarea {
+#listing .comments-box .comments form .form-group textarea, #watchlist .comments-box .comments form .form-group textarea, #category .comments-box .comments form .form-group textarea {
   background-blend-mode: multiply;
   background: rgba(0, 0, 0, 0.25);
 }
-#listing .comments-box .comments form .form-group textarea::placeholder, #watchlist .comments-box .comments form .form-group textarea::placeholder {
+#listing .comments-box .comments form .form-group textarea::placeholder, #watchlist .comments-box .comments form .form-group textarea::placeholder, #category .comments-box .comments form .form-group textarea::placeholder {
   color: var(--color-quaternary);
   opacity: 0.4;
 }
-#listing .comments-box .comments form .form-group button, #watchlist .comments-box .comments form .form-group button {
+#listing .comments-box .comments form .form-group button, #watchlist .comments-box .comments form .form-group button, #category .comments-box .comments form .form-group button {
   background: var(--color-secondary);
   padding: 0.2rem 1rem;
 }
-#listing .comments-box .comments .scroll-comments, #watchlist .comments-box .comments .scroll-comments {
+#listing .comments-box .comments .scroll-comments, #watchlist .comments-box .comments .scroll-comments, #category .comments-box .comments .scroll-comments {
   overflow-y: auto;
   height: 300px;
   margin-bottom: 1.6rem;
@@ -396,13 +403,13 @@ header .container-nav {
   flex-direction: column-reverse;
 }
 
-#watchlist .auto-grid {
+#watchlist .auto-grid, #category .auto-grid {
   margin: 12rem 20px 2rem;
 }
-#watchlist .auto-grid .col {
+#watchlist .auto-grid .col, #category .auto-grid .col {
   padding: 4rem 1rem 2rem;
 }
-#watchlist .auto-grid .col .listing-image img {
+#watchlist .auto-grid .col .listing-image img, #category .auto-grid .col .listing-image img {
   width: 120px;
   height: 130px;
   border-radius: 0.5rem;

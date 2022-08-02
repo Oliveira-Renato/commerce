@@ -15,9 +15,13 @@
                     {% endif %}
                     {% if request.user == listing.user %}
                        <div class="close-auction show">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             <a href="{% url 'close_listing' listing.id %}">
+                                <!-- Button trigger modal -->
                                 <span class="iconify" data-icon="ri:auction-fill"></span>Close Auction
                             </a>
+                        </button>
+                            
                        </div>
                     {% endif %}
                     {% if watchlist %}  
@@ -66,7 +70,6 @@
                 </div>
             {% else %}
                 <h3>No bids yet</h3>
-                <p>{{bids}}</p>
             {% endif %}
             <form action="{% url 'bid' listing.id %}" method="POST">
                 {% csrf_token %}
@@ -120,6 +123,24 @@
             {% endif %}
         </div>
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to close this auction?
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+            <button type="button" class="btn btn-primary">Yes</button>
+            </div>
+        </div>
+        </div>
+  </div>
 </section>
 
 {% endblock %}

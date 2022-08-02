@@ -1,11 +1,11 @@
 {% extends "auctions/layout.html" %}
 
 {% block body %}
-    <div class="text-center">
-        <h1>Auctions</h1>
-        <h5>Active listings</h5>
-    </div>
      <section id="home">
+        <div class="text-center">
+            <h1>Auctions</h1>
+            <h5>Active listings</h5>
+        </div>
         <ul class="auto-grid">
             {% for t in teste %}
                 {% if t.active == 1 %}
