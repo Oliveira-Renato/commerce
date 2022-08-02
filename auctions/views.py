@@ -193,3 +193,13 @@ def categories(request, category_id):
         return render(request, "auctions/categories.html", {
             "categories": Category.objects.all()
         })
+
+def winner(request):
+    if request.user.is_authenticated:
+        winner = Winner.objects.filter(winner_user=request.user)
+        return render(request, "auctions/winner.html", {
+            "winner": winner,
+            "message": "You are the winner!"
+        })
+    else:
+        return render(request, "auctions/winner.html")

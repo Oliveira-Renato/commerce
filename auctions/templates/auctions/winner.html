@@ -5,11 +5,36 @@
   {% load static %}
   <!--Winner Auction -->
   <section id="winner">
-    <div class="winner-title">
-      <h2 class="text-center">Winner</h2>
-    </div>
-    <aside class="winner-info">
-    </aside>
+    {% if winner %}
+      <div class="winner-title  text-center">
+        <h1>Congratulations {{request.user}}!</h1>
+        <h3>You will find above the actions that you won.</h3>
+      </div>
+
+      <div class="winner-actions">
+        <h2 class="text-center mt-4">Actions you won:</h2>
+        <ul class="auto-grid listing-info">
+          {% for action in winner %}
+            <div class="col card-auction">
+              <h2>{{action.listing.title}}</h2>
+              <div class="listing-image text-center">
+                <img src={{action.listing.image_url}}>
+              </div>
+              <div class="listing-description text-center">
+                {{ action.listing.description}}
+              </div>
+              <div class="listing-price text-center">
+                <p>Winner Bid ${{ action.winner_bid}}</p>
+              </div>
+              <p>{{action.date}}</p>
+            </div>
+          {% endfor %}
+        </ul>
+    {% else %}
+      <div class="winner-title">
+        <h1>You have not won any auctions yet.</h1>
+      </div>
+    {% endif %}
   </section>
 
 {% endblock %}

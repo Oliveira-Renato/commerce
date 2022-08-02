@@ -56,7 +56,7 @@ class Winner(models.Model):
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.winner_user}"
+        return f"{self.winner_user} {self.listing.inicial_bid} {self.winner_bid} {self.date} {self.listing}" 
         
 class Comments(models.Model):
     id = models.AutoField(primary_key=True)
