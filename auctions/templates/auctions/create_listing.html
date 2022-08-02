@@ -1,49 +1,58 @@
 {% extends "auctions/layout.html" %}
 
 {% block body %}
-<h1>Create Listing</h1>
-{% if user.is_authenticated %}
-    <form action="{% url 'create_listing' %}" method="post">
-        {% csrf_token %}
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Title</span>
-            <input type="text" class="form-control" name="title" placeholder="Title's listing" aria-label="Username" aria-describedby="basic-addon1">
+<section id="create-listing">
+    <h1 class="text-center">Create Listing</h1>
+    {% if user.is_authenticated %}
+        <div class="create-listing-container">
+            <div class="create-listing-row">
+                <form action="{% url 'create_listing' %}" method="post">
+                    {% csrf_token %}
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Title</span>
+                        <input type="text" class="form-control" name="title"  aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-text">Description</span>
+                        <textarea class="form-control" name="description" aria-label="With textarea"></textarea>
+                    </div>
+                    <label for="basic-url" class="form-label mt-3">Inicial bid</label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">$</span>
+                        <input type="text" class="form-control" name="price" aria-label="Amount (to the nearest dollar)">
+                        <span class="input-group-text">.00</span>
+                    </div>
+                    <label for="basic-url" class="form-label">Listing Image URL</label>
+                        <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon3">https://example.com/img/</span>
+                        <input type="text" class="form-control" name="image" id="basic-url" aria-describedby="basic-addon3">
+                    </div>
+                    <div class="form-group">
+                        <label for="categories">Category</label>
+                        <select class="form-select" name="categories" id="categories">
+                            <option selected>Choose...</option>
+                            <option value="1">Art</option>
+                            <option value="2">Books</option>
+                            <option value="3">Clothing</option>
+                            <option value="5">Furniture</option>
+                            <option value="6">Games</option>
+                            <option value="7">Music</option>
+                            <option value="9">Toys</option>
+                            <option value="10">Electronics</option>
+                            <option value="11">Weapons</option>
+                            <option value="8">Other</option>
+                        </select>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-dark">Create new listing</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="input-group">
-            <span class="input-group-text">Description</span>
-            <textarea class="form-control" name="description" aria-label="With textarea"></textarea>
-        </div>
-        <label for="basic-url" class="form-label mt-3">Inicial bid</label>
-        <div class="input-group mb-3">
-            <span class="input-group-text">$</span>
-            <input type="text" class="form-control" name="price" aria-label="Amount (to the nearest dollar)">
-            <span class="input-group-text">.00</span>
-        </div>
-        <label for="basic-url" class="form-label">Listing Image URL</label>
-            <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon3">https://example.com/img/</span>
-            <input type="text" class="form-control" name="image" id="basic-url" aria-describedby="basic-addon3">
-        </div>
-        <div class="form-group">
-            <label for="categories">Category</label>
-            <select class="form-select" name="categories" id="categories">
-                <option selected>Choose...</option>
-                <option value="1">Art</option>
-                <option value="2">Books</option>
-                <option value="3">Clothing</option>
-                <option value="5">Furniture</option>
-                <option value="6">Games</option>
-                <option value="7">Music</option>
-                <option value="9">Toys</option>
-                <option value="10">Electronics</option>
-                <option value="11">Weapons</option>
-                <option value="8">Other</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Create new listing</button>
-    </form>
-{% else %}
-    <p>In order to create a new listing you shall be <a href="{% url 'login' %}">logged in</a>. If you still don't have an account, just <a href="{% url 'register' %}">click here!</a></p>
-{% endif %}
+    {% else %}
+        <p>In order to create a new listing you shall be <a href="{% url 'login' %}">logged in</a>. If you still don't have an account, just <a href="{% url 'register' %}">click here!</a></p>
+    {% endif %}
+    
+</section>
 
 {% endblock %}

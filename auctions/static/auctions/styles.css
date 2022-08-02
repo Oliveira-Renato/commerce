@@ -387,7 +387,7 @@ header .container-nav {
   color: var(--text-color) !important;
 }
 #listing .listing-info .close-auction button > a img, #watchlist .listing-info .close-auction button > a img, #category .listing-info .close-auction button > a img {
-  width: 45px;
+  width: 46px;
 }
 #listing .listing-info .close-auction > p, #watchlist .listing-info .close-auction > p, #category .listing-info .close-auction > p {
   font-size: 1.5rem;
@@ -497,11 +497,11 @@ header .container-nav {
   left: 0;
 }
 
-#login, #register {
+#login, #register, #create-listing {
   overflow: hidden;
   margin-top: 7rem;
 }
-#login .login-container, #login .register-container, #register .login-container, #register .register-container {
+#login .login-container, #login .register-container, #login .create-listing-container, #register .login-container, #register .register-container, #register .create-listing-container, #create-listing .login-container, #create-listing .register-container, #create-listing .create-listing-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -509,7 +509,7 @@ header .container-nav {
   width: 100%;
   padding: 2rem;
 }
-#login .login-container .form-group input, #login .register-container .form-group input, #register .login-container .form-group input, #register .register-container .form-group input {
+#login .login-container .form-group input, #login .login-container .form-group textarea, #login .login-container .form-group select, #login .login-container .input-group input, #login .login-container .input-group textarea, #login .login-container .input-group select, #login .register-container .form-group input, #login .register-container .form-group textarea, #login .register-container .form-group select, #login .register-container .input-group input, #login .register-container .input-group textarea, #login .register-container .input-group select, #login .create-listing-container .form-group input, #login .create-listing-container .form-group textarea, #login .create-listing-container .form-group select, #login .create-listing-container .input-group input, #login .create-listing-container .input-group textarea, #login .create-listing-container .input-group select, #register .login-container .form-group input, #register .login-container .form-group textarea, #register .login-container .form-group select, #register .login-container .input-group input, #register .login-container .input-group textarea, #register .login-container .input-group select, #register .register-container .form-group input, #register .register-container .form-group textarea, #register .register-container .form-group select, #register .register-container .input-group input, #register .register-container .input-group textarea, #register .register-container .input-group select, #register .create-listing-container .form-group input, #register .create-listing-container .form-group textarea, #register .create-listing-container .form-group select, #register .create-listing-container .input-group input, #register .create-listing-container .input-group textarea, #register .create-listing-container .input-group select, #create-listing .login-container .form-group input, #create-listing .login-container .form-group textarea, #create-listing .login-container .form-group select, #create-listing .login-container .input-group input, #create-listing .login-container .input-group textarea, #create-listing .login-container .input-group select, #create-listing .register-container .form-group input, #create-listing .register-container .form-group textarea, #create-listing .register-container .form-group select, #create-listing .register-container .input-group input, #create-listing .register-container .input-group textarea, #create-listing .register-container .input-group select, #create-listing .create-listing-container .form-group input, #create-listing .create-listing-container .form-group textarea, #create-listing .create-listing-container .form-group select, #create-listing .create-listing-container .input-group input, #create-listing .create-listing-container .input-group textarea, #create-listing .create-listing-container .input-group select {
   background-color: var(--color-quinary);
   border: none;
   color: var(--text-color);
@@ -518,29 +518,65 @@ header .container-nav {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 5px;
-  width: 100%;
   border: 2px solid var(--color-secondary);
   transition: all 0.5s ease-in-out;
   border-radius: 5px 5px 5px 5px;
 }
-#login .login-container .form-group input:focus, #login .register-container .form-group input:focus, #register .login-container .form-group input:focus, #register .register-container .form-group input:focus {
+#login .login-container .form-group input:focus, #login .login-container .form-group textarea:focus, #login .login-container .form-group select:focus, #login .login-container .input-group input:focus, #login .login-container .input-group textarea:focus, #login .login-container .input-group select:focus, #login .register-container .form-group input:focus, #login .register-container .form-group textarea:focus, #login .register-container .form-group select:focus, #login .register-container .input-group input:focus, #login .register-container .input-group textarea:focus, #login .register-container .input-group select:focus, #login .create-listing-container .form-group input:focus, #login .create-listing-container .form-group textarea:focus, #login .create-listing-container .form-group select:focus, #login .create-listing-container .input-group input:focus, #login .create-listing-container .input-group textarea:focus, #login .create-listing-container .input-group select:focus, #register .login-container .form-group input:focus, #register .login-container .form-group textarea:focus, #register .login-container .form-group select:focus, #register .login-container .input-group input:focus, #register .login-container .input-group textarea:focus, #register .login-container .input-group select:focus, #register .register-container .form-group input:focus, #register .register-container .form-group textarea:focus, #register .register-container .form-group select:focus, #register .register-container .input-group input:focus, #register .register-container .input-group textarea:focus, #register .register-container .input-group select:focus, #register .create-listing-container .form-group input:focus, #register .create-listing-container .form-group textarea:focus, #register .create-listing-container .form-group select:focus, #register .create-listing-container .input-group input:focus, #register .create-listing-container .input-group textarea:focus, #register .create-listing-container .input-group select:focus, #create-listing .login-container .form-group input:focus, #create-listing .login-container .form-group textarea:focus, #create-listing .login-container .form-group select:focus, #create-listing .login-container .input-group input:focus, #create-listing .login-container .input-group textarea:focus, #create-listing .login-container .input-group select:focus, #create-listing .register-container .form-group input:focus, #create-listing .register-container .form-group textarea:focus, #create-listing .register-container .form-group select:focus, #create-listing .register-container .input-group input:focus, #create-listing .register-container .input-group textarea:focus, #create-listing .register-container .input-group select:focus, #create-listing .create-listing-container .form-group input:focus, #create-listing .create-listing-container .form-group textarea:focus, #create-listing .create-listing-container .form-group select:focus, #create-listing .create-listing-container .input-group input:focus, #create-listing .create-listing-container .input-group textarea:focus, #create-listing .create-listing-container .input-group select:focus {
   background-color: var(--color-quaternary);
   border-bottom: 2px solid var(--color-quinary);
   outline: none;
 }
-#login .login-container .form-group input::placeholder, #login .register-container .form-group input::placeholder, #register .login-container .form-group input::placeholder, #register .register-container .form-group input::placeholder {
+#login .login-container .form-group input::placeholder, #login .login-container .form-group textarea::placeholder, #login .login-container .form-group select::placeholder, #login .login-container .input-group input::placeholder, #login .login-container .input-group textarea::placeholder, #login .login-container .input-group select::placeholder, #login .register-container .form-group input::placeholder, #login .register-container .form-group textarea::placeholder, #login .register-container .form-group select::placeholder, #login .register-container .input-group input::placeholder, #login .register-container .input-group textarea::placeholder, #login .register-container .input-group select::placeholder, #login .create-listing-container .form-group input::placeholder, #login .create-listing-container .form-group textarea::placeholder, #login .create-listing-container .form-group select::placeholder, #login .create-listing-container .input-group input::placeholder, #login .create-listing-container .input-group textarea::placeholder, #login .create-listing-container .input-group select::placeholder, #register .login-container .form-group input::placeholder, #register .login-container .form-group textarea::placeholder, #register .login-container .form-group select::placeholder, #register .login-container .input-group input::placeholder, #register .login-container .input-group textarea::placeholder, #register .login-container .input-group select::placeholder, #register .register-container .form-group input::placeholder, #register .register-container .form-group textarea::placeholder, #register .register-container .form-group select::placeholder, #register .register-container .input-group input::placeholder, #register .register-container .input-group textarea::placeholder, #register .register-container .input-group select::placeholder, #register .create-listing-container .form-group input::placeholder, #register .create-listing-container .form-group textarea::placeholder, #register .create-listing-container .form-group select::placeholder, #register .create-listing-container .input-group input::placeholder, #register .create-listing-container .input-group textarea::placeholder, #register .create-listing-container .input-group select::placeholder, #create-listing .login-container .form-group input::placeholder, #create-listing .login-container .form-group textarea::placeholder, #create-listing .login-container .form-group select::placeholder, #create-listing .login-container .input-group input::placeholder, #create-listing .login-container .input-group textarea::placeholder, #create-listing .login-container .input-group select::placeholder, #create-listing .register-container .form-group input::placeholder, #create-listing .register-container .form-group textarea::placeholder, #create-listing .register-container .form-group select::placeholder, #create-listing .register-container .input-group input::placeholder, #create-listing .register-container .input-group textarea::placeholder, #create-listing .register-container .input-group select::placeholder, #create-listing .create-listing-container .form-group input::placeholder, #create-listing .create-listing-container .form-group textarea::placeholder, #create-listing .create-listing-container .form-group select::placeholder, #create-listing .create-listing-container .input-group input::placeholder, #create-listing .create-listing-container .input-group textarea::placeholder, #create-listing .create-listing-container .input-group select::placeholder {
   color: var(--color-quaternary);
   opacity: 0.8;
   font-weight: 500;
 }
-#login .login-container .login-row a, #login .login-container .register-row a, #login .register-container .login-row a, #login .register-container .register-row a, #register .login-container .login-row a, #register .login-container .register-row a, #register .register-container .login-row a, #register .register-container .register-row a {
+#login .login-container .login-row a, #login .login-container .register-row a, #login .login-container .create-listing-row a, #login .register-container .login-row a, #login .register-container .register-row a, #login .register-container .create-listing-row a, #login .create-listing-container .login-row a, #login .create-listing-container .register-row a, #login .create-listing-container .create-listing-row a, #register .login-container .login-row a, #register .login-container .register-row a, #register .login-container .create-listing-row a, #register .register-container .login-row a, #register .register-container .register-row a, #register .register-container .create-listing-row a, #register .create-listing-container .login-row a, #register .create-listing-container .register-row a, #register .create-listing-container .create-listing-row a, #create-listing .login-container .login-row a, #create-listing .login-container .register-row a, #create-listing .login-container .create-listing-row a, #create-listing .register-container .login-row a, #create-listing .register-container .register-row a, #create-listing .register-container .create-listing-row a, #create-listing .create-listing-container .login-row a, #create-listing .create-listing-container .register-row a, #create-listing .create-listing-container .create-listing-row a {
   color: var(--color-quinary);
   text-decoration: underline;
   font-weight: 600;
 }
-#login .login-container .login-button, #login .login-container .register-button, #login .register-container .login-button, #login .register-container .register-button, #register .login-container .login-button, #register .login-container .register-button, #register .register-container .login-button, #register .register-container .register-button {
+#login .login-container .login-button, #login .login-container .register-button, #login .register-container .login-button, #login .register-container .register-button, #login .create-listing-container .login-button, #login .create-listing-container .register-button, #register .login-container .login-button, #register .login-container .register-button, #register .register-container .login-button, #register .register-container .register-button, #register .create-listing-container .login-button, #register .create-listing-container .register-button, #create-listing .login-container .login-button, #create-listing .login-container .register-button, #create-listing .register-container .login-button, #create-listing .register-container .register-button, #create-listing .create-listing-container .login-button, #create-listing .create-listing-container .register-button {
   margin-bottom: 2.6rem;
+}
+
+#create-listing .create-listing-container .create-listing-row .input-group-text {
+  line-height: 1.5;
+  color: var(--text-color);
+  background-color: var(--color-secondary);
+  border: 1px solid var(--shadow-v1);
+}
+#create-listing .create-listing-container .create-listing-row .input-group input, #create-listing .create-listing-container .create-listing-row .input-group textarea {
+  text-align: left;
+  padding: 0;
+}
+#create-listing .create-listing-container .create-listing-row .form-group select {
+  padding: 5px;
+}
+#create-listing .create-listing-container .create-listing-row label {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+#exampleModal .modal-dialog .modal-content {
+  color: var(--bs-modal-color);
+  background-color: var(--color-quaternary);
+}
+#exampleModal .modal-dialog .modal-content .modal-header, #exampleModal .modal-dialog .modal-content .modal-body, #exampleModal .modal-dialog .modal-content .modal-footer {
+  border: none;
+  background: var(--color-secondary);
+  color: var(--text-color);
+}
+#exampleModal .modal-dialog .modal-content .modal-header {
+  background: var(--color-primary);
+}
+#exampleModal .modal-dialog .modal-content .btn-dark {
+  background: var(--color-quinary);
+}
+#exampleModal .modal-dialog .modal-content .btn-dark a {
+  color: var(--text-color);
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -16,7 +16,7 @@
                     {% if request.user == listing.user %}
                        <div class="close-auction show">
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <a href="{% url 'close_listing' listing.id %}">
+                                <a >
                                     <!-- Button trigger modal -->
                                     <!-- <span class="iconify" data-icon="ri:auction-fill"></span> -->
                                     <img src="{% static 'auctions/images/pnghost_auction-icon-business-icon.png' %}" alt="">
@@ -130,15 +130,22 @@
         <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Close Auction</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 Are you sure you want to close this auction?
+                <div class="img-test">
+                    <img src="{% static 'auctions/images/random-guy.png' %}" alt="">
+                </div>
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-            <button type="button" class="btn btn-primary">Yes</button>
+            <button type="button" class="btn btn-dark ">
+                <a href="{% url 'close_listing' listing.id %}">
+                    Yes, i do!
+                </a>
+            </button>
             </div>
         </div>
         </div>

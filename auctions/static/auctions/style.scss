@@ -397,7 +397,7 @@ section {
           color: var(--text-color) !important;
 
           img {
-            width: 45px;
+            width: 46px;
           }
         }
       }
@@ -533,11 +533,11 @@ section {
     }
   }
 } 
-#login, #register {
+#login, #register, #create-listing {
   overflow: hidden;
   margin-top: 7rem;
 
-  .login-container, .register-container {
+  .login-container, .register-container, .create-listing-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -545,8 +545,8 @@ section {
     width: 100%;   
     padding: 2rem;
 
-    .form-group {
-      input {
+    .form-group, .input-group {
+      input, textarea, select {
         background-color: var(--color-quinary);
         border: none;
         color: var(--text-color);
@@ -555,8 +555,6 @@ section {
         text-decoration: none;
         display: inline-block;
         font-size: 16px;
-        margin: 5px;
-        width: 100%;
         border: 2px solid var(--color-secondary);
         transition: all 0.5s ease-in-out;
         border-radius: 5px 5px 5px 5px;
@@ -572,7 +570,7 @@ section {
         }
       }
     }
-    .login-row, .register-row {
+    .login-row, .register-row, .create-listing-row {
         a {
           color: var(--color-quinary);
           text-decoration: underline;
@@ -583,4 +581,62 @@ section {
       margin-bottom: 2.6rem;
     }
   }
+}
+
+#create-listing {
+  .create-listing-container {
+    .create-listing-row {
+      .input-group-text {
+        line-height: 1.5;
+        color: var(--text-color);
+        background-color: var(--color-secondary);
+        border: 1px solid var(--shadow-v1);
+      }
+      .input-group {
+       
+        input, textarea {
+          text-align: left;
+          padding: 0;
+        }
+      }
+      .form-group {
+        select {
+          padding: 5px;
+        }
+      }
+      label {
+        font-weight: 600;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+#exampleModal {
+  .modal-dialog {
+    .modal-content {
+      color: var(--bs-modal-color);
+      background-color: var(--color-quaternary);;
+
+      .modal-header, .modal-body, .modal-footer {
+        border: none;
+        background: var(--color-secondary);
+        color: var(--text-color);
+      }
+      .modal-header {
+        background: var(--color-primary);
+      }
+      .btn-dark {
+        background: var(--color-quinary);
+      }
+
+      .btn-dark {
+        a {
+          color: var(--text-color);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  
 }
