@@ -177,17 +177,17 @@ header .container-nav {
 }
 @media (min-width: 700px) {
   #listing .listing-info, #watchlist .listing-info, #category .listing-info {
+    margin: 17rem 90px 2rem;
+  }
+}
+@media (min-width: 1200px) {
+  #listing .listing-info, #watchlist .listing-info, #category .listing-info {
     margin: 17rem 120px 2rem;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1400px) {
   #listing .listing-info, #watchlist .listing-info, #category .listing-info {
-    margin: 17rem 220px 2rem;
-  }
-}
-@media (min-width: 1284px) {
-  #listing .listing-info, #watchlist .listing-info, #category .listing-info {
-    margin: 17rem 420px 2rem;
+    margin: 17rem 180px 2rem;
   }
 }
 #listing .listing-info > h1, #watchlist .listing-info > h1, #category .listing-info > h1 {
@@ -353,6 +353,41 @@ header .container-nav {
   display: block;
   width: 100%;
   height: auto;
+}
+#listing .listing-info .close-auction button, #watchlist .listing-info .close-auction button, #category .listing-info .close-auction button {
+  width: 104px;
+  height: 104px;
+  border-radius: 100%;
+  border: 2px solid var(--color-quinary);
+  background: var(--color-quaternary);
+  position: fixed;
+  top: 120px;
+  right: 30px;
+  z-index: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease-in-out;
+}
+@media (min-width: 700px) {
+  #listing .listing-info .close-auction button, #watchlist .listing-info .close-auction button, #category .listing-info .close-auction button {
+    right: 80px;
+  }
+}
+@media (min-width: 1024px) {
+  #listing .listing-info .close-auction button, #watchlist .listing-info .close-auction button, #category .listing-info .close-auction button {
+    right: 160px;
+  }
+}
+#listing .listing-info .close-auction button:hover, #watchlist .listing-info .close-auction button:hover, #category .listing-info .close-auction button:hover {
+  background: var(--color-secondary);
+  border: 2px solid var(--color-quaternary);
+}
+#listing .listing-info .close-auction button > a, #watchlist .listing-info .close-auction button > a, #category .listing-info .close-auction button > a {
+  font-size: 12px !important;
+  font-weight: 600;
+  color: var(--text-color) !important;
+}
+#listing .listing-info .close-auction button > a img, #watchlist .listing-info .close-auction button > a img, #category .listing-info .close-auction button > a img {
+  width: 45px;
 }
 #listing .listing-info .close-auction > p, #watchlist .listing-info .close-auction > p, #category .listing-info .close-auction > p {
   font-size: 1.5rem;

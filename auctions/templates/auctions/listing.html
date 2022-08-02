@@ -15,12 +15,14 @@
                     {% endif %}
                     {% if request.user == listing.user %}
                        <div class="close-auction show">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            <a href="{% url 'close_listing' listing.id %}">
-                                <!-- Button trigger modal -->
-                                <span class="iconify" data-icon="ri:auction-fill"></span>Close Auction
-                            </a>
-                        </button>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <a href="{% url 'close_listing' listing.id %}">
+                                    <!-- Button trigger modal -->
+                                    <!-- <span class="iconify" data-icon="ri:auction-fill"></span> -->
+                                    <img src="{% static 'auctions/images/pnghost_auction-icon-business-icon.png' %}" alt="">
+                                    Close Auction
+                                </a>
+                            </button>
                             
                        </div>
                     {% endif %}
