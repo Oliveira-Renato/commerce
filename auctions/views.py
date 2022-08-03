@@ -13,8 +13,13 @@ def error_message(request,message):
     })   
 # just a comment
 def index(request): 
+    if request.user.is_authenticated:
+        return render(request, "auctions/index.html", {
+            "winner": Winner.objects.filter(winner_user=request.user),
+            "auctions": AuctionsListing.objects.all()
+        })
     return render(request, "auctions/index.html", {
-        "teste": AuctionsListing.objects.all()
+        "auctions": AuctionsListing.objects.all()
     })
 
 def login_view(request):
@@ -95,25 +100,29 @@ def listing(request, listing_id):
                 "listing": AuctionsListing.objects.get(id=listing_id),
                 "bids": Bids.objects.filter(listing=listing_id).order_by('-id')[:3],
                 "watchlist": Watchlist.objects.filter(user=request.user, listing=listing_id),
-                "comments": comments.order_by('-id')
+                "comments": comments.order_by('-id'),
+                "winner":  Winner.objects.filter(winner_user=request.user)
             })
         
         return render(request, "auctions/listing.html", {
             "listing": AuctionsListing.objects.get(id=listing_id),
             "watchlist": Watchlist.objects.filter(user=request.user, listing=listing_id),
-            "bids": Bids.objects.filter(listing=listing_id)
+            "bids": Bids.objects.filter(listing=listing_id),
+            "winner":  Winner.objects.filter(winner_user=request.user)
         })
     else:
         return render(request, "auctions/listing.html", {
             "listing": AuctionsListing.objects.get(id=listing_id),
-            "bids": Bids.objects.filter(listing=listing_id)
+            "bids": Bids.objects.filter(listing=listing_id),
+            "winner":  Winner.objects.filter(winner_user=request.user)
         })
 
 def watchlist_view(request):
     if request.user.is_authenticated:   
         user = request.user 
         return render(request, "auctions/watchlist.html", {
-        "watchlist": Watchlist.objects.filter(user=user)
+            "watchlist": Watchlist.objects.filter(user=user),
+            "winner":  Winner.objects.filter(winner_user=request.user)
         }) 
     else:
         return render(request, "auctions/watchlist.html")
@@ -150,7 +159,8 @@ def bid(request, listing_id):
            return HttpResponse(error_message(request, "The bid must be higher than the last bid"))
     else:
         return render(request, "auctions/listing.html", {
-            "listing": AuctionsListing.objects.get(id=listing_id)
+            "listing": AuctionsListing.objects.get(id=listing_id),
+            "winner":  Winner.objects.filter(winner_user=request.user)
         })
 
 def close_listing(request, listing_id):
@@ -178,7 +188,8 @@ def comments(request, listing_id):
     else:
         return render(request, "auctions/listing.html", {
             "listing": AuctionsListing.objects.get(id=listing_id),
-            "comments": Comments.objects.filter(listing=listing_id).order_by('-id')
+            "comments": Comments.objects.filter(listing=listing_id).order_by('-id'),
+             "winner":  Winner.objects.filter(winner_user=request.user)
         })
 
 def categories(request, category_id):
@@ -187,7 +198,8 @@ def categories(request, category_id):
         return render(request, "auctions/categories.html", {
             "categories": Category.objects.all(),
             "category": category,
-            "listings": AuctionsListing.objects.filter(category=category)
+            "listings": AuctionsListing.objects.filter(category=category),
+            "winner":  Winner.objects.filter(winner_user=request.user)
         })
     else:
         return render(request, "auctions/categories.html", {

@@ -1,13 +1,14 @@
 {% extends "auctions/layout.html" %}
 
 {% block body %}
+{% load static %}
      <section id="home">
         <div class="text-center">
             <h1>Auctions</h1>
             <h5>Active listings</h5>
         </div>
         <ul class="auto-grid">
-            {% for t in teste %}
+            {% for t in auctions %}
                 {% if t.active == 1 %}
                 <div class="col">
                     <h1>{{ t.title}}</h1>
@@ -20,8 +21,31 @@
                         <button  type="button" class="btn btn-dark">See more</button>
                     </a>
                 </div>
+
                 {% endif %}
             {% endfor %}
         </ul> 
+        {% if winner %}
+            <!-- TOAST WINNER -->
+            {% for action in winner %}
+            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                <div id="liveToast" class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <img src="{% static 'auctions/images/winner.png' %}" class="rounded me-2" alt="trophie" style="width: 20px;">
+                        <strong class="me-auto">Congratulations!</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        Congratulations, you won the <strong>{{action.listing.title}}</strong> auction!   
+                    </div>
+                    <div class="go-to-auction text-right">
+                         <a href="{% url 'winner' %}">
+                            Click here to see more details
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% endif %}
      </section>
 {% endblock %}

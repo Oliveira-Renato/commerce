@@ -99,6 +99,13 @@ header .container-nav {
   }
 }
 
+.navbar .nav-item .winner-menu {
+  display: flex;
+  align-items: center;
+}
+.navbar .nav-item .winner-menu svg {
+  margin-right: 0.3rem;
+}
 @media (min-width: 1024px) {
   .navbar {
     padding: 16px 100px;
@@ -188,6 +195,16 @@ header .container-nav {
 @media (min-width: 1400px) {
   #listing .listing-info, #watchlist .listing-info, #category .listing-info, #winner .listing-info {
     margin: 17rem 180px 2rem;
+  }
+}
+@media (min-width: 1600px) {
+  #listing .listing-info, #watchlist .listing-info, #category .listing-info, #winner .listing-info {
+    margin: 17rem 220px 2rem;
+  }
+}
+@media (min-width: 1900px) {
+  #listing .listing-info, #watchlist .listing-info, #category .listing-info, #winner .listing-info {
+    margin: 17rem 300px 2rem;
   }
 }
 #listing .listing-info > h1, #watchlist .listing-info > h1, #category .listing-info > h1, #winner .listing-info > h1 {
@@ -438,6 +455,9 @@ header .container-nav {
   flex-direction: column-reverse;
 }
 
+#watchlist h1, #category h1, #winner h1 {
+  margin-top: 7rem;
+}
 #watchlist .auto-grid, #category .auto-grid, #winner .auto-grid {
   margin: 12rem 20px 2rem;
 }
@@ -452,6 +472,9 @@ header .container-nav {
   top: -4.7rem;
 }
 
+#category h1 {
+  margin-top: 7rem;
+}
 #category .go-back-category {
   margin: 2rem;
   font-size: 4.2rem;
@@ -577,6 +600,34 @@ header .container-nav {
 #exampleModal .modal-dialog .modal-content .btn-dark a {
   color: var(--text-color);
   text-decoration: none;
+}
+
+#liveToast {
+  background: var(--color-secondary);
+}
+#liveToast .toast-header {
+  background: var(--color-secondary);
+}
+#liveToast .toast-header strong {
+  color: #DFDFDF;
+}
+#liveToast .toast-header button {
+  filter: invert(1);
+}
+#liveToast .toast-body {
+  color: var(--text-color);
+}
+#liveToast .toast-body strong {
+  color: var(--color-primary);
+}
+#liveToast .go-to-auction {
+  padding: 0.5rem;
+}
+#liveToast .go-to-auction a {
+  color: var(--color-quaternary);
+  text-decoration: none;
+  margin: 1rem;
+  font-weight: 600;
 }
 
 /*# sourceMappingURL=styles.css.map */
