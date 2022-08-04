@@ -1,0 +1,13 @@
+:root {
+    --auto-grid-min-size: 20rem;
+    /*==Colors==*/
+    --text-color: #FFF;
+    --text-color-dark: #333;
+    --color-primary: #A7414A;
+    --color-secondary: #282726;
+    --color-tertiary: #6A8A82;
+    --color-quaternary: #A37C27;
+    --color-quinary: #563838;
+    --shadow-1: rgb(255, 195, 0);
+    --box-shadow-btn: 0 0 0 .2rem rgba(255,170,0,.5);
+}
