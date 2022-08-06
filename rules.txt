@@ -1,3 +1,4 @@
+/*Some rules*/
 -- Class Bids:
   + ForeignKey User
   + ForeignKey Listing 
