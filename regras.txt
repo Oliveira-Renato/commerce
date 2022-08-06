@@ -1,0 +1,11 @@
+-- Class AuctionsListing:
+    * must have title for the listing;
+    * must have a text based description;
+    * must have a starting bid
+    * must have a field for an URL image #optionally
+    * must have a category #optionally
+    * active or not
+
+-- class Watchlist
+    * must have user id
+    * must have listing id
