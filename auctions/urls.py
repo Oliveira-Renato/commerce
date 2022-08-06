@@ -1,5 +1,8 @@
 from django.urls import path
 
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.views.generic.base import RedirectView
+
 from . import views
 
 urlpatterns = [
@@ -17,4 +20,5 @@ urlpatterns = [
     path("comments/<int:listing_id>", views.comments, name="comments"),
     path("categories/<int:category_id>", views.categories, name="categories"),
     path("user-listing", views.winner, name="winner"),
+    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('auctions/images/favicon/android-chrome-192x192.png'))),
 ]

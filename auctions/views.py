@@ -1,11 +1,10 @@
 from django.contrib.auth import authenticate, login, logout
 from django.db import IntegrityError
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, HttpRequest
 from django.shortcuts import render
 from django.urls import reverse
-from django.contrib import messages
-from .models import User, AuctionsListing, Watchlist, Bids, Winner, Comments, Category
 
+from .models import User, AuctionsListing, Watchlist, Bids, Winner, Comments, Category
 
 def error_message(request,message):
     return render(request, "auctions/error_message.html", {
