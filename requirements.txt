@@ -6,3 +6,4 @@ python-decouple==3.6
 sqlparse==0.4.2
 tzdata==2022.1
 whitenoise==6.2.0
+django-heroku==0.3.1
