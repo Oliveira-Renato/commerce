@@ -1,0 +1,652 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+@import url(./variables.css);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: smooth;
+}
+
+html {
+  font-size: 62.5%;
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5rem;
+  color: #333;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  overflow-x: hidden;
+  background: var(--color-tertiary);
+}
+
+ul {
+  list-style: none;
+  margin: 2rem;
+  padding: 0;
+}
+
+.form-group input, .form-group textarea {
+  background: transparent;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+main {
+  margin-top: 100px;
+}
+main h1, main section h1 {
+  font-weight: 600;
+  font-size: 2.6rem;
+}
+
+header .main-header .logo a > img {
+  width: 60px;
+  height: auto;
+  object-fit: contain;
+}
+header .main-header .menu-toggle {
+  position: absolute;
+  top: 0.3rem;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+header .main-header .menu-toggle > svg {
+  width: 40px;
+  height: 60px;
+  color: var(--color-quaternary);
+  transition: 0.3s;
+}
+header .main-header .menu-toggle > svg :hover {
+  color: var(--color-secondary);
+}
+header .main-header .menu-toggle > svg :active {
+  color: var(--color-primary);
+}
+header .container-nav {
+  height: 100%;
+  overflow: hidden;
+  /* max-height: 100%; */
+  z-index: 2;
+  width: 100%;
+  position: fixed;
+  background: linear-gradient(45deg, #FFF 4%, 0%, #333 100%);
+  top: 0;
+  right: -200%;
+  transition: all 0.5s ease-in-out;
+}
+
+@media (min-width: 1024px) {
+  section {
+    margin-right: 100px;
+    margin-left: 100px;
+  }
+}
+@media (min-width: 1280px) {
+  section {
+    margin-right: 200px;
+    margin-left: 200px;
+  }
+}
+
+.navbar .nav-item .winner-menu {
+  display: flex;
+  align-items: center;
+}
+.navbar .nav-item .winner-menu svg {
+  margin-right: 0.3rem;
+}
+@media (min-width: 1024px) {
+  .navbar {
+    padding: 16px 100px;
+  }
+}
+@media (min-width: 1280px) {
+  .navbar {
+    padding: 16px 200px;
+  }
+}
+
+.form-control {
+  border: 1px solid rgba(245, 245, 220, 0.2);
+  border-bottom: 1px solid rgba(111, 78, 55, 0.5);
+}
+
+.form-control:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 0.25rem rgba(255, 195, 0, 0.25);
+}
+
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+  grid-gap: 1rem;
+  margin-top: 12rem;
+}
+.auto-grid .col {
+  padding: 4rem 1rem 2rem;
+  text-align: center;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border-radius: 0.5rem;
+  position: relative;
+  bottom: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  margin-bottom: 6rem;
+}
+.auto-grid .col .img-item {
+  display: flex;
+  justify-content: center;
+}
+.auto-grid .col:hover {
+  transform: translateY(-0.2rem);
+}
+.auto-grid .col h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.auto-grid .col li {
+  margin-bottom: 1rem;
+}
+.auto-grid .col img {
+  width: 120px;
+  height: 130px;
+  border-radius: 0.5rem;
+  position: absolute;
+  top: -4.7rem;
+}
+.auto-grid .col .desc-item {
+  height: 50px;
+  overflow: hidden;
+}
+
+#home {
+  margin-top: 7rem;
+}
+
+#listing .listing-title h1, #watchlist .listing-title h1, #category .listing-title h1, #winner .listing-title h1 {
+  margin-top: 7rem;
+}
+#listing .listing-info, #watchlist .listing-info, #category .listing-info, #winner .listing-info {
+  margin: 12rem 40px 2rem;
+}
+@media (min-width: 700px) {
+  #listing .listing-info, #watchlist .listing-info, #category .listing-info, #winner .listing-info {
+    margin: 17rem 90px 2rem;
+  }
+}
+@media (min-width: 1200px) {
+  #listing .listing-info, #watchlist .listing-info, #category .listing-info, #winner .listing-info {
+    margin: 17rem 120px 2rem;
+  }
+}
+@media (min-width: 1400px) {
+  #listing .listing-info, #watchlist .listing-info, #category .listing-info, #winner .listing-info {
+    margin: 17rem 180px 2rem;
+  }
+}
+@media (min-width: 1600px) {
+  #listing .listing-info, #watchlist .listing-info, #category .listing-info, #winner .listing-info {
+    margin: 17rem 220px 2rem;
+  }
+}
+@media (min-width: 1900px) {
+  #listing .listing-info, #watchlist .listing-info, #category .listing-info, #winner .listing-info {
+    margin: 17rem 300px 2rem;
+  }
+}
+#listing .listing-info > h1, #watchlist .listing-info > h1, #category .listing-info > h1, #winner .listing-info > h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+#listing .listing-info .card-auction, #watchlist .listing-info .card-auction, #category .listing-info .card-auction, #winner .listing-info .card-auction {
+  position: relative;
+  background-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+  color: #ffffff;
+  padding: 7rem 1rem 2rem;
+}
+@media (min-width: 700px) {
+  #listing .listing-info .card-auction, #watchlist .listing-info .card-auction, #category .listing-info .card-auction, #winner .listing-info .card-auction {
+    padding: 10rem 1rem 2rem;
+  }
+}
+@media (min-width: 370px) {
+  #listing .listing-info .card-auction, #watchlist .listing-info .card-auction, #category .listing-info .card-auction, #winner .listing-info .card-auction {
+    padding: 7rem 1rem 2rem;
+  }
+}
+#listing .listing-info .card-auction .watch-on a, #watchlist .listing-info .card-auction .watch-on a, #category .listing-info .card-auction .watch-on a, #winner .listing-info .card-auction .watch-on a {
+  text-decoration: none;
+  color: var(--color-secondary);
+  font-weight: 600;
+  font-size: 0.96rem;
+}
+#listing .listing-info .card-auction .watch-on a svg, #watchlist .listing-info .card-auction .watch-on a svg, #category .listing-info .card-auction .watch-on a svg, #winner .listing-info .card-auction .watch-on a svg {
+  padding-right: 0.3rem;
+}
+#listing .listing-info .bids, #listing .listing-info .comments, #watchlist .listing-info .bids, #watchlist .listing-info .comments, #category .listing-info .bids, #category .listing-info .comments, #winner .listing-info .bids, #winner .listing-info .comments {
+  position: relative;
+  border: 1px solid var(--color-quinary);
+  margin-top: 2rem;
+  padding: 2rem;
+  background: var(--color-secondary);
+  color: var(--teal);
+  border-radius: 0.5rem;
+}
+#listing .listing-info .bids .bids-title, #listing .listing-info .bids .comments-title, #listing .listing-info .bids .winner-title, #listing .listing-info .comments .bids-title, #listing .listing-info .comments .comments-title, #listing .listing-info .comments .winner-title, #watchlist .listing-info .bids .bids-title, #watchlist .listing-info .bids .comments-title, #watchlist .listing-info .bids .winner-title, #watchlist .listing-info .comments .bids-title, #watchlist .listing-info .comments .comments-title, #watchlist .listing-info .comments .winner-title, #category .listing-info .bids .bids-title, #category .listing-info .bids .comments-title, #category .listing-info .bids .winner-title, #category .listing-info .comments .bids-title, #category .listing-info .comments .comments-title, #category .listing-info .comments .winner-title, #winner .listing-info .bids .bids-title, #winner .listing-info .bids .comments-title, #winner .listing-info .bids .winner-title, #winner .listing-info .comments .bids-title, #winner .listing-info .comments .comments-title, #winner .listing-info .comments .winner-title {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: var(--color-quinary);
+}
+#listing .listing-info .bids .bids-title .bid-row, #listing .listing-info .bids .bids-title .comments-row, #listing .listing-info .bids .comments-title .bid-row, #listing .listing-info .bids .comments-title .comments-row, #listing .listing-info .bids .winner-title .bid-row, #listing .listing-info .bids .winner-title .comments-row, #listing .listing-info .comments .bids-title .bid-row, #listing .listing-info .comments .bids-title .comments-row, #listing .listing-info .comments .comments-title .bid-row, #listing .listing-info .comments .comments-title .comments-row, #listing .listing-info .comments .winner-title .bid-row, #listing .listing-info .comments .winner-title .comments-row, #watchlist .listing-info .bids .bids-title .bid-row, #watchlist .listing-info .bids .bids-title .comments-row, #watchlist .listing-info .bids .comments-title .bid-row, #watchlist .listing-info .bids .comments-title .comments-row, #watchlist .listing-info .bids .winner-title .bid-row, #watchlist .listing-info .bids .winner-title .comments-row, #watchlist .listing-info .comments .bids-title .bid-row, #watchlist .listing-info .comments .bids-title .comments-row, #watchlist .listing-info .comments .comments-title .bid-row, #watchlist .listing-info .comments .comments-title .comments-row, #watchlist .listing-info .comments .winner-title .bid-row, #watchlist .listing-info .comments .winner-title .comments-row, #category .listing-info .bids .bids-title .bid-row, #category .listing-info .bids .bids-title .comments-row, #category .listing-info .bids .comments-title .bid-row, #category .listing-info .bids .comments-title .comments-row, #category .listing-info .bids .winner-title .bid-row, #category .listing-info .bids .winner-title .comments-row, #category .listing-info .comments .bids-title .bid-row, #category .listing-info .comments .bids-title .comments-row, #category .listing-info .comments .comments-title .bid-row, #category .listing-info .comments .comments-title .comments-row, #category .listing-info .comments .winner-title .bid-row, #category .listing-info .comments .winner-title .comments-row, #winner .listing-info .bids .bids-title .bid-row, #winner .listing-info .bids .bids-title .comments-row, #winner .listing-info .bids .comments-title .bid-row, #winner .listing-info .bids .comments-title .comments-row, #winner .listing-info .bids .winner-title .bid-row, #winner .listing-info .bids .winner-title .comments-row, #winner .listing-info .comments .bids-title .bid-row, #winner .listing-info .comments .bids-title .comments-row, #winner .listing-info .comments .comments-title .bid-row, #winner .listing-info .comments .comments-title .comments-row, #winner .listing-info .comments .winner-title .bid-row, #winner .listing-info .comments .winner-title .comments-row {
+  width: 100px;
+  height: 40px;
+  position: absolute;
+  top: -1.5rem;
+  background: var(--color-quinary);
+  border-radius: 1.5rem;
+}
+#listing .listing-info .bids .bids-title .bid-row h3, #listing .listing-info .bids .bids-title .comments-row h3, #listing .listing-info .bids .comments-title .bid-row h3, #listing .listing-info .bids .comments-title .comments-row h3, #listing .listing-info .bids .winner-title .bid-row h3, #listing .listing-info .bids .winner-title .comments-row h3, #listing .listing-info .comments .bids-title .bid-row h3, #listing .listing-info .comments .bids-title .comments-row h3, #listing .listing-info .comments .comments-title .bid-row h3, #listing .listing-info .comments .comments-title .comments-row h3, #listing .listing-info .comments .winner-title .bid-row h3, #listing .listing-info .comments .winner-title .comments-row h3, #watchlist .listing-info .bids .bids-title .bid-row h3, #watchlist .listing-info .bids .bids-title .comments-row h3, #watchlist .listing-info .bids .comments-title .bid-row h3, #watchlist .listing-info .bids .comments-title .comments-row h3, #watchlist .listing-info .bids .winner-title .bid-row h3, #watchlist .listing-info .bids .winner-title .comments-row h3, #watchlist .listing-info .comments .bids-title .bid-row h3, #watchlist .listing-info .comments .bids-title .comments-row h3, #watchlist .listing-info .comments .comments-title .bid-row h3, #watchlist .listing-info .comments .comments-title .comments-row h3, #watchlist .listing-info .comments .winner-title .bid-row h3, #watchlist .listing-info .comments .winner-title .comments-row h3, #category .listing-info .bids .bids-title .bid-row h3, #category .listing-info .bids .bids-title .comments-row h3, #category .listing-info .bids .comments-title .bid-row h3, #category .listing-info .bids .comments-title .comments-row h3, #category .listing-info .bids .winner-title .bid-row h3, #category .listing-info .bids .winner-title .comments-row h3, #category .listing-info .comments .bids-title .bid-row h3, #category .listing-info .comments .bids-title .comments-row h3, #category .listing-info .comments .comments-title .bid-row h3, #category .listing-info .comments .comments-title .comments-row h3, #category .listing-info .comments .winner-title .bid-row h3, #category .listing-info .comments .winner-title .comments-row h3, #winner .listing-info .bids .bids-title .bid-row h3, #winner .listing-info .bids .bids-title .comments-row h3, #winner .listing-info .bids .comments-title .bid-row h3, #winner .listing-info .bids .comments-title .comments-row h3, #winner .listing-info .bids .winner-title .bid-row h3, #winner .listing-info .bids .winner-title .comments-row h3, #winner .listing-info .comments .bids-title .bid-row h3, #winner .listing-info .comments .bids-title .comments-row h3, #winner .listing-info .comments .comments-title .bid-row h3, #winner .listing-info .comments .comments-title .comments-row h3, #winner .listing-info .comments .winner-title .bid-row h3, #winner .listing-info .comments .winner-title .comments-row h3 {
+  color: var(--color-quaternary);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 0.2rem;
+}
+#listing .listing-info .bids .header-bid, #listing .listing-info .comments .header-bid, #watchlist .listing-info .bids .header-bid, #watchlist .listing-info .comments .header-bid, #category .listing-info .bids .header-bid, #category .listing-info .comments .header-bid, #winner .listing-info .bids .header-bid, #winner .listing-info .comments .header-bid {
+  display: flex;
+  justify-content: space-around;
+  color: var(--text-color);
+  text-transform: capitalize;
+  margin-bottom: 1.6rem;
+  background: var(--color-quaternary);
+}
+#listing .listing-info .bids .bid-container, #listing .listing-info .comments .bid-container, #watchlist .listing-info .bids .bid-container, #watchlist .listing-info .comments .bid-container, #category .listing-info .bids .bid-container, #category .listing-info .comments .bid-container, #winner .listing-info .bids .bid-container, #winner .listing-info .comments .bid-container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+#listing .listing-info .bids .bid-container .bid, #listing .listing-info .comments .bid-container .bid, #watchlist .listing-info .bids .bid-container .bid, #watchlist .listing-info .comments .bid-container .bid, #category .listing-info .bids .bid-container .bid, #category .listing-info .comments .bid-container .bid, #winner .listing-info .bids .bid-container .bid, #winner .listing-info .comments .bid-container .bid {
+  border-bottom: 1px solid var(--color-quinary);
+  padding: 0 0 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+#listing .listing-info .bids .bid-container .bid p, #listing .listing-info .comments .bid-container .bid p, #watchlist .listing-info .bids .bid-container .bid p, #watchlist .listing-info .comments .bid-container .bid p, #category .listing-info .bids .bid-container .bid p, #category .listing-info .comments .bid-container .bid p, #winner .listing-info .bids .bid-container .bid p, #winner .listing-info .comments .bid-container .bid p {
+  margin: 0;
+}
+#listing .listing-info .bids .form-group input, #listing .listing-info .bids .form-group textarea, #listing .listing-info .comments .form-group input, #listing .listing-info .comments .form-group textarea, #watchlist .listing-info .bids .form-group input, #watchlist .listing-info .bids .form-group textarea, #watchlist .listing-info .comments .form-group input, #watchlist .listing-info .comments .form-group textarea, #category .listing-info .bids .form-group input, #category .listing-info .bids .form-group textarea, #category .listing-info .comments .form-group input, #category .listing-info .comments .form-group textarea, #winner .listing-info .bids .form-group input, #winner .listing-info .bids .form-group textarea, #winner .listing-info .comments .form-group input, #winner .listing-info .comments .form-group textarea {
+  background: transparent;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+#listing .listing-info .bids .form-group .btn-primary:not(:disabled):not(.disabled):active, #listing .listing-info .comments .form-group .btn-primary:not(:disabled):not(.disabled):active, #watchlist .listing-info .bids .form-group .btn-primary:not(:disabled):not(.disabled):active, #watchlist .listing-info .comments .form-group .btn-primary:not(:disabled):not(.disabled):active, #category .listing-info .bids .form-group .btn-primary:not(:disabled):not(.disabled):active, #category .listing-info .comments .form-group .btn-primary:not(:disabled):not(.disabled):active, #winner .listing-info .bids .form-group .btn-primary:not(:disabled):not(.disabled):active, #winner .listing-info .comments .form-group .btn-primary:not(:disabled):not(.disabled):active {
+  box-shadow: var(--box-shadow-btn);
+}
+#listing .listing-info .bids .form-group .d-flex, #listing .listing-info .comments .form-group .d-flex, #watchlist .listing-info .bids .form-group .d-flex, #watchlist .listing-info .comments .form-group .d-flex, #category .listing-info .bids .form-group .d-flex, #category .listing-info .comments .form-group .d-flex, #winner .listing-info .bids .form-group .d-flex, #winner .listing-info .comments .form-group .d-flex {
+  justify-content: center;
+}
+#listing .listing-info .bids .form-group button, #listing .listing-info .comments .form-group button, #watchlist .listing-info .bids .form-group button, #watchlist .listing-info .comments .form-group button, #category .listing-info .bids .form-group button, #category .listing-info .comments .form-group button, #winner .listing-info .bids .form-group button, #winner .listing-info .comments .form-group button {
+  padding: 0.2rem 2rem 0.2rem 1rem;
+  background: var(--color-quinary);
+  border: none;
+}
+#listing .listing-info .bids .form-group button > img, #listing .listing-info .comments .form-group button > img, #watchlist .listing-info .bids .form-group button > img, #watchlist .listing-info .comments .form-group button > img, #category .listing-info .bids .form-group button > img, #category .listing-info .comments .form-group button > img, #winner .listing-info .bids .form-group button > img, #winner .listing-info .comments .form-group button > img {
+  width: 20px;
+  height: 25px;
+}
+#listing .listing-info .listing-image, #watchlist .listing-info .listing-image, #category .listing-info .listing-image, #winner .listing-info .listing-image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+#listing .listing-info .listing-image .fix-size-img, #watchlist .listing-info .listing-image .fix-size-img, #category .listing-info .listing-image .fix-size-img, #winner .listing-info .listing-image .fix-size-img {
+  position: absolute;
+  top: -7.5rem;
+  background: var(--color-secondary);
+  margin: auto 0;
+  border-radius: 2%;
+  width: 250px;
+  height: 220px;
+  display: flex;
+  align-content: center;
+  overflow: hidden;
+}
+@media (min-width: 700px) {
+  #listing .listing-info .listing-image .fix-size-img, #watchlist .listing-info .listing-image .fix-size-img, #category .listing-info .listing-image .fix-size-img, #winner .listing-info .listing-image .fix-size-img {
+    width: 350px;
+    height: 320px;
+    top: -13.5rem;
+  }
+}
+#listing .listing-info .listing-image .fix-size-img > img, #watchlist .listing-info .listing-image .fix-size-img > img, #category .listing-info .listing-image .fix-size-img > img, #winner .listing-info .listing-image .fix-size-img > img {
+  border-radius: 0.5%;
+  margin: auto 0;
+  padding: 0.2rem 0.8rem;
+}
+#listing .listing-info .listing-description, #watchlist .listing-info .listing-description, #category .listing-info .listing-description, #winner .listing-info .listing-description {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+#listing .listing-info .listing-description > p, #watchlist .listing-info .listing-description > p, #category .listing-info .listing-description > p, #winner .listing-info .listing-description > p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+}
+#listing .listing-info .listing-price, #watchlist .listing-info .listing-price, #category .listing-info .listing-price, #winner .listing-info .listing-price {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+#listing .listing-info .listing-price > p, #watchlist .listing-info .listing-price > p, #category .listing-info .listing-price > p, #winner .listing-info .listing-price > p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  color: #dfdfdfdf;
+  text-shadow: 0 2px 6px var(--color-quinary);
+}
+#listing .listing-info .close-auction, #watchlist .listing-info .close-auction, #category .listing-info .close-auction, #winner .listing-info .close-auction {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+#listing .listing-info .close-auction button, #watchlist .listing-info .close-auction button, #category .listing-info .close-auction button, #winner .listing-info .close-auction button {
+  width: 104px;
+  height: 104px;
+  border-radius: 100%;
+  border: 2px solid var(--color-quinary);
+  background: var(--color-quaternary);
+  position: fixed;
+  top: 120px;
+  right: 30px;
+  z-index: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease-in-out;
+}
+@media (min-width: 700px) {
+  #listing .listing-info .close-auction button, #watchlist .listing-info .close-auction button, #category .listing-info .close-auction button, #winner .listing-info .close-auction button {
+    right: 80px;
+  }
+}
+@media (min-width: 1024px) {
+  #listing .listing-info .close-auction button, #watchlist .listing-info .close-auction button, #category .listing-info .close-auction button, #winner .listing-info .close-auction button {
+    right: 160px;
+  }
+}
+#listing .listing-info .close-auction button:hover, #watchlist .listing-info .close-auction button:hover, #category .listing-info .close-auction button:hover, #winner .listing-info .close-auction button:hover {
+  background: var(--color-secondary);
+  border: 2px solid var(--color-quaternary);
+}
+#listing .listing-info .close-auction button > a, #watchlist .listing-info .close-auction button > a, #category .listing-info .close-auction button > a, #winner .listing-info .close-auction button > a {
+  font-size: 12px !important;
+  font-weight: 600;
+  color: var(--text-color) !important;
+}
+#listing .listing-info .close-auction button > a img, #watchlist .listing-info .close-auction button > a img, #category .listing-info .close-auction button > a img, #winner .listing-info .close-auction button > a img {
+  width: 46px;
+}
+#listing .listing-info .close-auction > p, #watchlist .listing-info .close-auction > p, #category .listing-info .close-auction > p, #winner .listing-info .close-auction > p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+#listing .comments-box .comments, #watchlist .comments-box .comments, #category .comments-box .comments, #winner .comments-box .comments {
+  background: var(--color-quinary);
+  color: var(--text-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-secondary);
+}
+#listing .comments-box .comments .comments-title .comments-row, #watchlist .comments-box .comments .comments-title .comments-row, #category .comments-box .comments .comments-title .comments-row, #winner .comments-box .comments .comments-title .comments-row {
+  background: var(--color-secondary);
+  width: 162px;
+}
+#listing .comments-box .comments .comment, #watchlist .comments-box .comments .comment, #category .comments-box .comments .comment, #winner .comments-box .comments .comment {
+  background: var(--color-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  margin-bottom: 0.4rem;
+}
+#listing .comments-box .comments .comment strong, #watchlist .comments-box .comments .comment strong, #category .comments-box .comments .comment strong, #winner .comments-box .comments .comment strong {
+  font-size: 0.7rem;
+}
+#listing .comments-box .comments .comment p, #watchlist .comments-box .comments .comment p, #category .comments-box .comments .comment p, #winner .comments-box .comments .comment p {
+  font-size: 0.9rem;
+  margin: 0;
+  word-break: break-all;
+}
+#listing .comments-box .comments form .form-group textarea, #watchlist .comments-box .comments form .form-group textarea, #category .comments-box .comments form .form-group textarea, #winner .comments-box .comments form .form-group textarea {
+  background-blend-mode: multiply;
+  background: rgba(0, 0, 0, 0.25);
+}
+#listing .comments-box .comments form .form-group textarea::placeholder, #watchlist .comments-box .comments form .form-group textarea::placeholder, #category .comments-box .comments form .form-group textarea::placeholder, #winner .comments-box .comments form .form-group textarea::placeholder {
+  color: var(--color-quaternary);
+  opacity: 0.4;
+}
+#listing .comments-box .comments form .form-group button, #watchlist .comments-box .comments form .form-group button, #category .comments-box .comments form .form-group button, #winner .comments-box .comments form .form-group button {
+  background: var(--color-secondary);
+  padding: 0.2rem 1rem;
+}
+#listing .comments-box .comments .scroll-comments, #watchlist .comments-box .comments .scroll-comments, #category .comments-box .comments .scroll-comments, #winner .comments-box .comments .scroll-comments {
+  overflow-y: auto;
+  height: 300px;
+  margin-bottom: 1.6rem;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#watchlist h1, #category h1, #winner h1 {
+  margin-top: 7rem;
+}
+#watchlist .auto-grid, #category .auto-grid, #winner .auto-grid {
+  margin: 12rem 20px 2rem;
+}
+#watchlist .auto-grid .col, #category .auto-grid .col, #winner .auto-grid .col {
+  padding: 4rem 1rem 2rem;
+}
+#watchlist .auto-grid .col .listing-image img, #category .auto-grid .col .listing-image img, #winner .auto-grid .col .listing-image img {
+  width: 120px;
+  height: 130px;
+  border-radius: 0.5rem;
+  position: absolute;
+  top: -4.7rem;
+}
+
+#category h1 {
+  margin-top: 7rem;
+}
+#category .go-back-category {
+  margin: 2rem;
+  font-size: 4.2rem;
+}
+#category .go-back-category svg path {
+  fill: var(--color-quinary);
+  transition: fill 0.3s ease-in-out;
+}
+#category .go-back-category svg path:hover {
+  fill: var(--color-secondary);
+}
+#category .caio-color {
+  color: #e00;
+}
+#category .category-list {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+}
+#category ul {
+  list-style: none;
+}
+#category ul li a {
+  position: relative;
+  text-decoration: none;
+  color: var(--color-quinary);
+  transition: all 0.35s ease;
+}
+#category ul li a:hover {
+  color: var(--color-secondary);
+}
+#category ul li a:hover:before {
+  width: 100%;
+}
+#category ul li a::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: var(--color-secondary);
+  transition: width 0.3s ease 0s;
+  bottom: 0;
+  left: 0;
+}
+
+#login, #register, #create-listing {
+  overflow: hidden;
+  margin-top: 7rem;
+}
+#login .login-container, #login .register-container, #login .create-listing-container, #register .login-container, #register .register-container, #register .create-listing-container, #create-listing .login-container, #create-listing .register-container, #create-listing .create-listing-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+}
+#login .login-container .form-group input, #login .login-container .form-group textarea, #login .login-container .form-group select, #login .login-container .input-group input, #login .login-container .input-group textarea, #login .login-container .input-group select, #login .register-container .form-group input, #login .register-container .form-group textarea, #login .register-container .form-group select, #login .register-container .input-group input, #login .register-container .input-group textarea, #login .register-container .input-group select, #login .create-listing-container .form-group input, #login .create-listing-container .form-group textarea, #login .create-listing-container .form-group select, #login .create-listing-container .input-group input, #login .create-listing-container .input-group textarea, #login .create-listing-container .input-group select, #register .login-container .form-group input, #register .login-container .form-group textarea, #register .login-container .form-group select, #register .login-container .input-group input, #register .login-container .input-group textarea, #register .login-container .input-group select, #register .register-container .form-group input, #register .register-container .form-group textarea, #register .register-container .form-group select, #register .register-container .input-group input, #register .register-container .input-group textarea, #register .register-container .input-group select, #register .create-listing-container .form-group input, #register .create-listing-container .form-group textarea, #register .create-listing-container .form-group select, #register .create-listing-container .input-group input, #register .create-listing-container .input-group textarea, #register .create-listing-container .input-group select, #create-listing .login-container .form-group input, #create-listing .login-container .form-group textarea, #create-listing .login-container .form-group select, #create-listing .login-container .input-group input, #create-listing .login-container .input-group textarea, #create-listing .login-container .input-group select, #create-listing .register-container .form-group input, #create-listing .register-container .form-group textarea, #create-listing .register-container .form-group select, #create-listing .register-container .input-group input, #create-listing .register-container .input-group textarea, #create-listing .register-container .input-group select, #create-listing .create-listing-container .form-group input, #create-listing .create-listing-container .form-group textarea, #create-listing .create-listing-container .form-group select, #create-listing .create-listing-container .input-group input, #create-listing .create-listing-container .input-group textarea, #create-listing .create-listing-container .input-group select {
+  background-color: var(--color-quinary);
+  border: none;
+  color: var(--text-color);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: 2px solid var(--color-secondary);
+  transition: all 0.5s ease-in-out;
+  border-radius: 5px 5px 5px 5px;
+}
+#login .login-container .form-group input:focus, #login .login-container .form-group textarea:focus, #login .login-container .form-group select:focus, #login .login-container .input-group input:focus, #login .login-container .input-group textarea:focus, #login .login-container .input-group select:focus, #login .register-container .form-group input:focus, #login .register-container .form-group textarea:focus, #login .register-container .form-group select:focus, #login .register-container .input-group input:focus, #login .register-container .input-group textarea:focus, #login .register-container .input-group select:focus, #login .create-listing-container .form-group input:focus, #login .create-listing-container .form-group textarea:focus, #login .create-listing-container .form-group select:focus, #login .create-listing-container .input-group input:focus, #login .create-listing-container .input-group textarea:focus, #login .create-listing-container .input-group select:focus, #register .login-container .form-group input:focus, #register .login-container .form-group textarea:focus, #register .login-container .form-group select:focus, #register .login-container .input-group input:focus, #register .login-container .input-group textarea:focus, #register .login-container .input-group select:focus, #register .register-container .form-group input:focus, #register .register-container .form-group textarea:focus, #register .register-container .form-group select:focus, #register .register-container .input-group input:focus, #register .register-container .input-group textarea:focus, #register .register-container .input-group select:focus, #register .create-listing-container .form-group input:focus, #register .create-listing-container .form-group textarea:focus, #register .create-listing-container .form-group select:focus, #register .create-listing-container .input-group input:focus, #register .create-listing-container .input-group textarea:focus, #register .create-listing-container .input-group select:focus, #create-listing .login-container .form-group input:focus, #create-listing .login-container .form-group textarea:focus, #create-listing .login-container .form-group select:focus, #create-listing .login-container .input-group input:focus, #create-listing .login-container .input-group textarea:focus, #create-listing .login-container .input-group select:focus, #create-listing .register-container .form-group input:focus, #create-listing .register-container .form-group textarea:focus, #create-listing .register-container .form-group select:focus, #create-listing .register-container .input-group input:focus, #create-listing .register-container .input-group textarea:focus, #create-listing .register-container .input-group select:focus, #create-listing .create-listing-container .form-group input:focus, #create-listing .create-listing-container .form-group textarea:focus, #create-listing .create-listing-container .form-group select:focus, #create-listing .create-listing-container .input-group input:focus, #create-listing .create-listing-container .input-group textarea:focus, #create-listing .create-listing-container .input-group select:focus {
+  background-color: var(--color-quaternary);
+  border-bottom: 2px solid var(--color-quinary);
+  outline: none;
+}
+#login .login-container .form-group input::placeholder, #login .login-container .form-group textarea::placeholder, #login .login-container .form-group select::placeholder, #login .login-container .input-group input::placeholder, #login .login-container .input-group textarea::placeholder, #login .login-container .input-group select::placeholder, #login .register-container .form-group input::placeholder, #login .register-container .form-group textarea::placeholder, #login .register-container .form-group select::placeholder, #login .register-container .input-group input::placeholder, #login .register-container .input-group textarea::placeholder, #login .register-container .input-group select::placeholder, #login .create-listing-container .form-group input::placeholder, #login .create-listing-container .form-group textarea::placeholder, #login .create-listing-container .form-group select::placeholder, #login .create-listing-container .input-group input::placeholder, #login .create-listing-container .input-group textarea::placeholder, #login .create-listing-container .input-group select::placeholder, #register .login-container .form-group input::placeholder, #register .login-container .form-group textarea::placeholder, #register .login-container .form-group select::placeholder, #register .login-container .input-group input::placeholder, #register .login-container .input-group textarea::placeholder, #register .login-container .input-group select::placeholder, #register .register-container .form-group input::placeholder, #register .register-container .form-group textarea::placeholder, #register .register-container .form-group select::placeholder, #register .register-container .input-group input::placeholder, #register .register-container .input-group textarea::placeholder, #register .register-container .input-group select::placeholder, #register .create-listing-container .form-group input::placeholder, #register .create-listing-container .form-group textarea::placeholder, #register .create-listing-container .form-group select::placeholder, #register .create-listing-container .input-group input::placeholder, #register .create-listing-container .input-group textarea::placeholder, #register .create-listing-container .input-group select::placeholder, #create-listing .login-container .form-group input::placeholder, #create-listing .login-container .form-group textarea::placeholder, #create-listing .login-container .form-group select::placeholder, #create-listing .login-container .input-group input::placeholder, #create-listing .login-container .input-group textarea::placeholder, #create-listing .login-container .input-group select::placeholder, #create-listing .register-container .form-group input::placeholder, #create-listing .register-container .form-group textarea::placeholder, #create-listing .register-container .form-group select::placeholder, #create-listing .register-container .input-group input::placeholder, #create-listing .register-container .input-group textarea::placeholder, #create-listing .register-container .input-group select::placeholder, #create-listing .create-listing-container .form-group input::placeholder, #create-listing .create-listing-container .form-group textarea::placeholder, #create-listing .create-listing-container .form-group select::placeholder, #create-listing .create-listing-container .input-group input::placeholder, #create-listing .create-listing-container .input-group textarea::placeholder, #create-listing .create-listing-container .input-group select::placeholder {
+  color: var(--color-quaternary);
+  opacity: 0.8;
+  font-weight: 500;
+}
+#login .login-container .login-row a, #login .login-container .register-row a, #login .login-container .create-listing-row a, #login .register-container .login-row a, #login .register-container .register-row a, #login .register-container .create-listing-row a, #login .create-listing-container .login-row a, #login .create-listing-container .register-row a, #login .create-listing-container .create-listing-row a, #register .login-container .login-row a, #register .login-container .register-row a, #register .login-container .create-listing-row a, #register .register-container .login-row a, #register .register-container .register-row a, #register .register-container .create-listing-row a, #register .create-listing-container .login-row a, #register .create-listing-container .register-row a, #register .create-listing-container .create-listing-row a, #create-listing .login-container .login-row a, #create-listing .login-container .register-row a, #create-listing .login-container .create-listing-row a, #create-listing .register-container .login-row a, #create-listing .register-container .register-row a, #create-listing .register-container .create-listing-row a, #create-listing .create-listing-container .login-row a, #create-listing .create-listing-container .register-row a, #create-listing .create-listing-container .create-listing-row a {
+  color: var(--color-quinary);
+  text-decoration: underline;
+  font-weight: 600;
+}
+#login .login-container .login-button, #login .login-container .register-button, #login .register-container .login-button, #login .register-container .register-button, #login .create-listing-container .login-button, #login .create-listing-container .register-button, #register .login-container .login-button, #register .login-container .register-button, #register .register-container .login-button, #register .register-container .register-button, #register .create-listing-container .login-button, #register .create-listing-container .register-button, #create-listing .login-container .login-button, #create-listing .login-container .register-button, #create-listing .register-container .login-button, #create-listing .register-container .register-button, #create-listing .create-listing-container .login-button, #create-listing .create-listing-container .register-button {
+  margin-bottom: 2.6rem;
+}
+
+#create-listing .create-listing-container .create-listing-row .input-group-text {
+  line-height: 1.5;
+  color: var(--text-color);
+  background-color: var(--color-secondary);
+  border: 1px solid var(--shadow-v1);
+}
+#create-listing .create-listing-container .create-listing-row .input-group input, #create-listing .create-listing-container .create-listing-row .input-group textarea {
+  text-align: left;
+  padding: 0;
+}
+#create-listing .create-listing-container .create-listing-row .form-group select {
+  padding: 5px;
+}
+#create-listing .create-listing-container .create-listing-row label {
+  font-weight: 600;
+  font-size: 1rem;
+}
+#create-listing .create-p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 2rem;
+}
+#create-listing .create-p a {
+  color: var(--color-quinary);
+  text-decoration: underline;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+#exampleModal .modal-dialog .modal-content {
+  color: var(--bs-modal-color);
+  background-color: var(--color-quaternary);
+}
+#exampleModal .modal-dialog .modal-content .modal-header, #exampleModal .modal-dialog .modal-content .modal-body, #exampleModal .modal-dialog .modal-content .modal-footer {
+  border: none;
+  background: var(--color-secondary);
+  color: var(--text-color);
+}
+#exampleModal .modal-dialog .modal-content .modal-header {
+  background: var(--color-primary);
+}
+#exampleModal .modal-dialog .modal-content .btn-dark {
+  background: var(--color-quinary);
+}
+#exampleModal .modal-dialog .modal-content .btn-dark a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+#liveToast {
+  background: var(--color-secondary);
+}
+#liveToast .toast-header {
+  background: var(--color-secondary);
+}
+#liveToast .toast-header strong {
+  color: #DFDFDF;
+}
+#liveToast .toast-header button {
+  filter: invert(1);
+}
+#liveToast .toast-body {
+  color: var(--text-color);
+}
+#liveToast .toast-body strong {
+  color: var(--color-primary);
+}
+#liveToast .go-to-auction {
+  padding: 0.5rem;
+}
+#liveToast .go-to-auction a {
+  color: var(--color-quaternary);
+  text-decoration: none;
+  margin: 1rem;
+  font-weight: 600;
+}
+
+.container-fluid .offcanvas .offcanvas-header h5 {
+  color: var(--color-quaternary);
+}
+
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+  color: var(--color-primary);
+}
+
+/*# sourceMappingURL=styles.css.map */
