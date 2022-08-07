@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#ALLOW all host to access the server
+CSRF_TRUSTED_ORIGINS=[auctionslisting.herokuapp.com]
 
 # Application definition
 
@@ -82,6 +84,8 @@ DATABASES = {
 }
 
 AUTH_USER_MODEL = 'auctions.User'
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
