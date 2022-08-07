@@ -77,7 +77,7 @@
                 {% csrf_token %}
                {% if user.is_authenticated %}
                     <div class="form-group">
-                        <input type="text" class="form-control" id="bid" name="bid" placeholder="Bid" required>
+                        <input type="number" class="form-control" id="bid" name="bid" placeholder="Bid" required>
                         <div class="d-flex">
                             <button type="submit" class="btn btn-primary">
                                 <img src="{% static 'auctions/images/bid.png' %}" alt="">
