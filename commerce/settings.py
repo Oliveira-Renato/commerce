@@ -32,8 +32,6 @@ ALLOWED_HOSTS = []
 #ALLOW all host to access the server
 CSRF_TRUSTED_ORIGINS=['https://auctionslisting.herokuapp.com']
 
-CSRF_COOKIE_DOMAIN = 'herokuapp.com'
-
 # Application definition
 
 INSTALLED_APPS = [
