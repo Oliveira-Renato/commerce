@@ -28,7 +28,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 #ALLOW all host to access the server
 CSRF_TRUSTED_ORIGINS=['https://auctionslisting.herokuapp.com']
 

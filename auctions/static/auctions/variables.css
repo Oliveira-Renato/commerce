@@ -10,4 +10,5 @@
     --color-quinary: #563838;
     --shadow-1: rgb(255, 195, 0);
     --box-shadow-btn: 0 0 0 .2rem rgba(255,170,0,.5);
+    --god-color: linear-gradient(251.39deg, #563838 8.77%, #282726 123.82%), linear-gradient(251.39deg, #A7414A -3.87%, #282726 123.82%);
 }

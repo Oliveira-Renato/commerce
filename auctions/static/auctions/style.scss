@@ -31,6 +31,10 @@ ul {
   list-style: none;
   margin: 2rem;
   padding: 0;
+
+  @media (min-width: 374px) {
+    margin: 1rem;
+  }
 }
 .form-group  {
   input, textarea {
@@ -388,7 +392,7 @@ section {
         height: 110px;
         border-radius: 100%;
         border: 2px solid var(--color-quinary);
-        background: var(--color-quaternary);
+        background: var(--god-color);
         position: fixed;
         top: 120px;
         right: 30px;
@@ -406,15 +410,27 @@ section {
 
         &:hover {
           background: var(--color-secondary);
-          border: 2px solid var(--color-quaternary);
+          border: 2px solid var(--god-color);
         }
        >a {
-          font-size: 12px !important;
-          font-weight: 600;
-          color: var(--text-color) !important;
+          position: relative;
+          top: -1.5rem;
+          right: 1rem;
+          width: 50px;
 
-          img {
-            width: 46px;
+          >img {
+            position: absolute;
+            top: -1rem;
+            right: -0.2rem;
+            width: 50px;
+          }
+          span {
+            font-size: 10px;
+            font-weight: 600;
+            position: relative;
+            color: var(--text-color) !important;
+            bottom: -2.5rem;
+            right: -1rem;
           }
         }
       }

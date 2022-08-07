@@ -31,6 +31,11 @@ ul {
   margin: 2rem;
   padding: 0;
 }
+@media (min-width: 374px) {
+  ul {
+    margin: 1rem;
+  }
+}
 
 .form-group input, .form-group textarea {
   background: transparent;
@@ -377,7 +382,7 @@ header .container-nav {
   height: 110px;
   border-radius: 100%;
   border: 2px solid var(--color-quinary);
-  background: var(--color-quaternary);
+  background: var(--god-color);
   position: fixed;
   top: 120px;
   right: 30px;
@@ -397,15 +402,27 @@ header .container-nav {
 }
 #listing .listing-info .close-auction button:hover, #watchlist .listing-info .close-auction button:hover, #category .listing-info .close-auction button:hover, #winner .listing-info .close-auction button:hover {
   background: var(--color-secondary);
-  border: 2px solid var(--color-quaternary);
+  border: 2px solid var(--god-color);
 }
 #listing .listing-info .close-auction button > a, #watchlist .listing-info .close-auction button > a, #category .listing-info .close-auction button > a, #winner .listing-info .close-auction button > a {
-  font-size: 12px !important;
-  font-weight: 600;
-  color: var(--text-color) !important;
+  position: relative;
+  top: -1.5rem;
+  right: 1rem;
+  width: 50px;
 }
-#listing .listing-info .close-auction button > a img, #watchlist .listing-info .close-auction button > a img, #category .listing-info .close-auction button > a img, #winner .listing-info .close-auction button > a img {
-  width: 46px;
+#listing .listing-info .close-auction button > a > img, #watchlist .listing-info .close-auction button > a > img, #category .listing-info .close-auction button > a > img, #winner .listing-info .close-auction button > a > img {
+  position: absolute;
+  top: -1rem;
+  right: -0.2rem;
+  width: 50px;
+}
+#listing .listing-info .close-auction button > a span, #watchlist .listing-info .close-auction button > a span, #category .listing-info .close-auction button > a span, #winner .listing-info .close-auction button > a span {
+  font-size: 10px;
+  font-weight: 600;
+  position: relative;
+  color: var(--text-color) !important;
+  bottom: -2.5rem;
+  right: -1rem;
 }
 #listing .listing-info .close-auction > p, #watchlist .listing-info .close-auction > p, #category .listing-info .close-auction > p, #winner .listing-info .close-auction > p {
   font-size: 1.5rem;
