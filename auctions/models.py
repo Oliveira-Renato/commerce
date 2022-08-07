@@ -30,7 +30,7 @@ class AuctionsListing(models.Model):
     description = models.CharField(max_length=2000, blank=False, 
     null=False)
     inicial_bid = models.FloatField()
-    image_url = models.URLField(max_length=6000)
+    image_url = models.URLField(max_length=6000,blank=True, null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE,default=None,related_name='categories', blank=True, null=True)
     active = models.BooleanField()
     date = models.DateTimeField(auto_now_add=True)

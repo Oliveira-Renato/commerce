@@ -80,8 +80,8 @@ def create_listing(request):
         categories = request.POST.getlist("categories")
         if  categories[0] != 'Choose...':
             listing = AuctionsListing(title=title, description=description, inicial_bid=price, image_url=image, user=user, active=1,category=Category.objects.get(id=categories[0]))
-
-        listing = AuctionsListing(title=title, description=description, inicial_bid=price, image_url=image, user=user, active=1)
+        else:
+            listing = AuctionsListing(title=title, description=description, inicial_bid=price, image_url=image, user=user, active=1)
         listing.save()
         return HttpResponseRedirect(reverse("index"))
     else:

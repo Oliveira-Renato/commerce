@@ -3,7 +3,16 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Auctions{% endblock %}</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'auctions/images/favicon/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'auctions/images/favicon/favicon-16x16.png' %}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'auctions/images/favicon/android-chrome-512x512.png' %}">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <!--Bootstrap import-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -14,6 +23,7 @@
         <link href="{% static 'auctions/styles.css' %}" rel="stylesheet">
         <link href="{% static 'auctions/error.css' %}" rel="stylesheet" >
         <link href="{% static 'auctions/variables.css' %}" rel="stylesheet">
+        <link href="{% static 'auctions/style.scss' %}" rel="stylesheet">
     </head>
     <body>
         <header>
