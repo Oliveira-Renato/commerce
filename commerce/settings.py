@@ -27,8 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+
 #ALLOW all host to access the server
-CSRF_TRUSTED_ORIGINS=[auctionslisting.herokuapp.com]
+CSRF_TRUSTED_ORIGINS=['auctionslisting.herokuapp.com']
 
 # Application definition
 
