@@ -249,8 +249,6 @@ header .container-nav {
   }
 }
 #listing .listing-info .card-auction h2, #watchlist .listing-info .card-auction h2, #category .listing-info .card-auction h2, #winner .listing-info .card-auction h2 {
-  color: var(--text-color-dark);
-  font-size: 2rem;
   font-weight: 700;
   padding-top: 1rem;
 }
