@@ -123,10 +123,15 @@ header .container-nav {
 }
 @media (min-width: 1024px) {
   .navbar {
-    padding: 16px 100px;
+    padding: 16px 60px;
   }
 }
 @media (min-width: 1280px) {
+  .navbar {
+    padding: 16px 120px;
+  }
+}
+@media (min-width: 1600px) {
   .navbar {
     padding: 16px 200px;
   }
