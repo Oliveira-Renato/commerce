@@ -235,16 +235,24 @@ section {
       padding: 7rem 1rem 2rem;
 
       @media (min-width: 700px) {
-        padding: 10rem 1rem 2rem;
+        padding: 10rem 5rem 2rem;
       }
       @media (min-width: 370px) {
         padding: 7rem 1rem 2rem;
       }
-
+      h2 {
+        color: var(--text-color-dark);
+        font-size: 2rem;
+        font-weight: 700;
+        padding-top: 1rem;
+      }
+      p {
+        color: var(--text-color-dark);
+      }
       .watch-on {
         a {
           text-decoration: none;
-          color: var(--color-secondary);
+          color: var(--shadow-1);
           font-weight: 600;
           font-size: .96rem;
           svg {
@@ -259,7 +267,7 @@ section {
       margin-top: 2rem;
       padding: 2rem;
       background: var(--color-secondary);
-      color: var(--teal);
+      color: var(--bs-teal);
       border-radius: 0.5rem;
 
       .bids-title, .comments-title, .winner-title {
@@ -384,12 +392,17 @@ section {
       display: block;
       width: 100%;
       height: auto;
+      overflow: hidden;
       > p {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         font-weight: 600;
         line-height: 1.5rem;
-        color: #dfdfdfdf;
-        text-shadow: 0 2px 6px var(--color-quinary);
+      }
+      >strong {
+        font-size: 1.6rem;
+        >span {
+          padding-right: 5px;
+        }
       }
     }
     .close-auction {
@@ -436,7 +449,7 @@ section {
           }
           span {
             font-size: 10px;
-            font-weight: 600;
+            font-weight: 600; 
             position: relative;
             color: var(--text-color) !important;
             bottom: -2.5rem;
