@@ -146,7 +146,7 @@ header .container-nav {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
   grid-gap: 1rem;
-  margin-top: 12rem;
+  margin-top: 8rem;
 }
 .auto-grid .col {
   padding: 4rem 1rem 2rem;
