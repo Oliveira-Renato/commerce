@@ -32,7 +32,7 @@ ul {
   margin: 2rem;
   padding: 0;
 
-  @media (min-width: 374px) {
+  @media (max-width: 374px) {
     margin: 1rem;
   }
 }
@@ -50,11 +50,19 @@ main {
   h1, section h1 {
     font-weight: 600;
     font-size: 2.6rem;
+    overflow: hidden;
   }
 }
 header {
   .main-header {
+    .navbar-nav .dropdown-menu {
+      padding: 2rem;
 
+      @media (min-width: 992px) {
+        width: 200px;
+        padding: 1.2rem;
+      }
+    }
     .logo {
       a {
         >img {
@@ -170,6 +178,7 @@ section {
     }
     li {
         margin-bottom: 1rem;
+        overflow: hidden;
     }
     img {
       width: 120px;
@@ -215,6 +224,7 @@ section {
       font-weight: 600;
       margin-bottom: 1rem;
       text-align: center;
+      overflow: hidden;
     }
     .card-auction {
       position: relative;
@@ -500,6 +510,7 @@ section {
 #watchlist, #category, #winner {
   h1 {
     margin-top: 7rem;
+    overflow: hidden;
   }
   .auto-grid {
     margin: 12rem 20px 2rem;
@@ -517,9 +528,10 @@ section {
     }
   }
 }
-#category {
+#category { 
   h1 {
     margin-top: 7rem;
+    overflow: hidden;
   }
   .go-back-category {
     margin: 2rem;
