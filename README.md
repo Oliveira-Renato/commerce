@@ -9,7 +9,8 @@
 This project was developed with the following technologies:
 * _[Python](https://www.python.org/)_
 * [Django](https://www.djangoproject.com/)
-* **HTML5** & **CSS**
+* [SASS](https://sass-lang.com)
+* HTML5
 
 ## :computer: Project
 
@@ -19,7 +20,7 @@ EBay-like e-commerce auction site that will allow users to post auction listings
 
 This project was developed during the  CS50's Web Programming with Python and JavaScript course, offered by [HarvardX](https://www.edx.org/).
 
-### I host the site on the [HEROKU](https://dashboard.heroku.com/) plataform, **[click here](https://auctionslisting.herokuapp.com)** to check it out
+### Site hosted on the [HEROKU](https://dashboard.heroku.com/) plataform, **[click here](https://auctionslisting.herokuapp.com)** to check it out
 
 
 ## :scroll: Lincense
