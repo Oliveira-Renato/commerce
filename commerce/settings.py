@@ -23,6 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
+# Carregar a chave secreta do arquivo .env
+from dotenv import load_dotenv
+load_dotenv()
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 
 ALLOWED_HOSTS = []
@@ -120,9 +124,12 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.0/howto/static-files/
+# Para desenvolvimento, no mesmo diretório do projeto
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'auctions/static'),
+]
 
-STATIC_URL = '/static/'
-import django_heroku
-django_heroku.settings(locals())
+# Para coletar arquivos estáticos no servidor de produção
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+DEBUG=True # pra rodar localmente
