@@ -32,7 +32,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 ALLOWED_HOSTS = ['auctionslisting.up.railway.app']
 
 #ALLOW all host to access the server
-CSRF_TRUSTED_ORIGINS=['https://auctionslisting.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://auctionslisting.up.railway.app']
 
 # Application definition
 
