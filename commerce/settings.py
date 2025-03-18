@@ -29,7 +29,7 @@ load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 
-ALLOWED_HOSTS = ['auctionslisting.up.railway.app']
+ALLOWED_HOSTS = ['auctionslisting.up.railway.app', 'localhost', '127.0.0.1']
 
 #ALLOW all host to access the server
 CSRF_TRUSTED_ORIGINS = ['https://auctionslisting.up.railway.app']
