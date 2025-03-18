@@ -29,7 +29,7 @@ load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [auctions.up.railway.app]
 
 #ALLOW all host to access the server
 CSRF_TRUSTED_ORIGINS=['https://auctionslisting.herokuapp.com']
