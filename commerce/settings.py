@@ -132,4 +132,4 @@ STATICFILES_DIRS = [
 # Para coletar arquivos estáticos no servidor de produção
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-DEBUG=True # pra rodar localmente
+DEBUG=False # True pra rodar localmente
