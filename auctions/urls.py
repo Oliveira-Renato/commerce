@@ -15,6 +15,7 @@ urlpatterns = [
     path("error_message", views.error_message),
     path("close_listing/<int:listing_id>", views.close_listing, name="close_listing"),
     path("comments/<int:listing_id>", views.comments, name="comments"),
+    path('categories/', views.categories, name='categories_all'), 
     path("categories/<int:category_id>", views.categories, name="categories"),
     path("user-listing", views.winner, name="winner"),
 ]

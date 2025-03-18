@@ -27,24 +27,19 @@
                         <span class="input-group-text" id="basic-addon3">https://example.com/img/</span>
                         <input type="text" class="form-control" name="image" id="basic-url" aria-describedby="basic-addon3">
                     </div>
+
                     <div class="form-group">
                         <label for="categories">Category</label>
                         <select class="form-select" name="categories" id="categories">
-                            <option selected>Choose...</option>
-                            <option value="1">Art</option>
-                            <option value="2">Books</option>
-                            <option value="3">Clothing</option>
-                            <option value="4">Electronics</option>
-                            <option value="5">Furniture</option>
-                            <option value="6">Games</option>
-                            <option value="7">Music</option>
-                            <option value="8">Sport</option>
-                            <option value="9">Toys</option>
-                            <option value="10">Vehicles</option>
-                            <option value="11">Weapons</option>
-                            <option value="12">Others</option>
+                            <option selected disabled>Choose...</option>
+                            {% for category in categoriesSelect %}
+                            <option value="{{ category.id }}">
+                            {{ category.name }}
+                            </option>
+                            {% endfor %}
                         </select>
                     </div>
+
                     <div class="text-center">
                         <button type="submit" class="btn btn-dark">Create new listing</button>
                     </div>

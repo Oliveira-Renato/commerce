@@ -26,7 +26,11 @@
               <h2>{{ item.title }}</h2>
 
               <div class="listing-image text-center">
-                <img src={{item.image_url}}>
+                {% if item.image_url %}
+                    <img src="{{ item.image_url }}" alt="{{ item.title }}">
+                {% else %}
+                    <p>Image not available</p>
+                {% endif %}
               </div>
               <div class="listing-description text-center">
                 {{ item.description}}

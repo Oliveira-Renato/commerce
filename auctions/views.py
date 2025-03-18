@@ -5,7 +5,9 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.contrib import messages
 from .models import User, AuctionsListing, Watchlist, Bids, Winner, Comments, Category
-
+from django import forms
+from .models import AuctionsListing, Category
+from django.http import Http404
 
 def error_message(request,message):
     return render(request, "auctions/error_message.html", {
@@ -77,15 +79,35 @@ def create_listing(request):
         price = request.POST["price"]
         image = request.POST["image"]
         user = request.user
-        categories = request.POST.getlist("categories")
-        if  categories[0] != 'Choose...':
-            listing = AuctionsListing(title=title, description=description, inicial_bid=price, image_url=image, user=user, active=1,category=Category.objects.get(id=categories[0]))
+        category_id = request.POST.get("categories") 
+
+        if category_id and category_id != 'Choose...':
+            category = Category.objects.get(id=category_id)
+            listing = AuctionsListing(
+                title=title,
+                description=description,
+                inicial_bid=price,
+                image_url=image,
+                user=user,
+                active=True,
+                category=category
+            )
         else:
-            listing = AuctionsListing(title=title, description=description, inicial_bid=price, image_url=image, user=user, active=1)
+            listing = AuctionsListing(
+                title=title,
+                description=description,
+                inicial_bid=price,
+                image_url=image,
+                user=user,
+                active=True
+            )
+
         listing.save()
         return HttpResponseRedirect(reverse("index"))
     else:
-        return render(request, "auctions/create_listing.html")
+        return render(request, "auctions/create_listing.html", {
+            "categoriesSelect": Category.objects.all()
+        })
 
 def listing(request, listing_id):
     if request.user.is_authenticated:
@@ -193,19 +215,26 @@ def comments(request, listing_id):
              "winner":  Winner.objects.filter(winner_user=request.user)
         })
 
-def categories(request, category_id):
-    if category_id != 0:
-        category = Category.objects.get(id=category_id)
-        return render(request, "auctions/categories.html", {
-            "categories": Category.objects.all(),
-            "category": category,
-            "listings": AuctionsListing.objects.filter(category=category),
-            "winner":  Winner.objects.filter(winner_user=request.user)
-        })
+def categories(request, category_id=None):
+    categories = Category.objects.all()
+    winner = Winner.objects.filter(winner_user=request.user) if request.user.is_authenticated else None
+
+    if category_id:
+        try:
+            category = Category.objects.get(id=category_id)
+            listings = AuctionsListing.objects.filter(category=category).order_by('-id')
+        except Category.DoesNotExist:
+            raise Http404("Category not found.")
     else:
-        return render(request, "auctions/categories.html", {
-            "categories": Category.objects.all()
-        })
+        category = None
+        listings = AuctionsListing.objects.all().order_by('-id')
+
+    return render(request, "auctions/categories.html", {
+        "categories": categories,
+        "category": category,
+        "listings": listings,
+        "winner": winner,
+    })
 
 def winner(request):
     if request.user.is_authenticated:
