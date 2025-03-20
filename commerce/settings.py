@@ -127,6 +127,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+STATIC_URL = '/static/'
 
 # Para desenvolvimento, no mesmo diretório do projeto
 STATICFILES_DIRS = [
