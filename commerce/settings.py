@@ -82,8 +82,12 @@ WSGI_APPLICATION = 'commerce.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql', 
+        'NAME': 'auctions-db',  
+        'USER': 'db_master', 
+        'PASSWORD': os.getenv('DB_PASSWORD'),  
+        'HOST': 'auctions-db.clwjrva4wiz5.us-east-1.rds.amazonaws.com', 
+        'PORT': '5432',  
     }
 }
 
