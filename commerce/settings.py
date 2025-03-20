@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', 
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -55,6 +56,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'commerce.urls'
 
@@ -128,13 +131,13 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-
+# Para coletar arquivos estáticos no servidor de produção
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Para desenvolvimento, no mesmo diretório do projeto
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'auctions/static'),
 ]
 
-# Para coletar arquivos estáticos no servidor de produção
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 DEBUG=False # True pra rodar localmente
