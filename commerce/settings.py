@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'commerce.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql', 
-        'NAME': 'auctions-db',  
+        'NAME': 'auctions_db',  
         'USER': 'db_master', 
         'PASSWORD': os.getenv('DB_PASSWORD'),  
         'HOST': 'auctions-db.clwjrva4wiz5.us-east-1.rds.amazonaws.com', 
