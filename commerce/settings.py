@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-
+from pathlib import Path
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -134,8 +134,10 @@ STATIC_URL = '/static/'
 # Para coletar arquivos estáticos no servidor de produção
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Para desenvolvimento, no mesmo diretório do projeto
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'auctions/static'),
+    BASE_DIR / 'auctions' / 'static',  # Corrigido: usamos Path para o BASE_DIR
 ]
 
 
