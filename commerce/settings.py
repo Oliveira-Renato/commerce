@@ -29,7 +29,7 @@ load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 
-ALLOWED_HOSTS = ['auctionslisting.up.railway.app', '0.0.0.0']
+ALLOWED_HOSTS = ['auctionslisting.up.railway.app', '0.0.0.0', 'localhost']
 
 #ALLOW all host to access the server
 CSRF_TRUSTED_ORIGINS = ['https://auctionslisting.up.railway.app']
@@ -130,14 +130,15 @@ USE_L10N = True
 
 USE_TZ = True
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 STATIC_URL = '/static/'
 # Para coletar arquivos estáticos no servidor de produção
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = BASE_DIR / "staticfiles" 
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'auctions/static'),
-)
-
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 
 DEBUG=False # True pra rodar localmente
