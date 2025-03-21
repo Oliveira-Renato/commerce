@@ -130,14 +130,12 @@ USE_L10N = True
 
 USE_TZ = True
 
-BASE_DIR = Path(__file__).resolve().parent.parent
 
 STATIC_URL = '/static/'
-# Para coletar arquivos estáticos no servidor de produção
-STATIC_ROOT = BASE_DIR / "staticfiles" 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    os.path.join(BASE_DIR, '/auctions/staticfiles/')
 ]
 
 
