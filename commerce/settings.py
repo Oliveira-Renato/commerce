@@ -133,12 +133,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # Para coletar arquivos estáticos no servidor de produção
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# Para desenvolvimento, no mesmo diretório do projeto
-BASE_DIR = Path(__file__).resolve().parent.parent
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'auctions' / 'static',  # Corrigido: usamos Path para o BASE_DIR
-]
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 
 
