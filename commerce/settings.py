@@ -29,10 +29,12 @@ load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 
-ALLOWED_HOSTS = ['auctionslisting.up.railway.app', '0.0.0.0', 'localhost']
+ALLOWED_HOSTS = ['auctionslisting.up.railway.app', '127.0.0.1']
 
 #ALLOW all host to access the server
-CSRF_TRUSTED_ORIGINS = ['https://auctionslisting.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://auctionslisting.up.railway.app', 'https://127.0.0.1']
+
+SECURE_CROSS_ORIGIN_OPENER_POLICY= 'same-origin-allow-popups'
 
 # Application definition
 
