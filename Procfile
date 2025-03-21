@@ -1,2 +1,2 @@
-web: python manage.py runserver 0.0.0.0:$PORT
+web: python manage.py collectstatic --noinput && gunicorn commerce.wsgi:application
 release: python manage.py migrate
