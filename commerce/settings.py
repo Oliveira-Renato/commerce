@@ -25,14 +25,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Carregar a chave secreta do arquivo .env
 from dotenv import load_dotenv
-load_dotenv()
+load_dotenv(dotenv_path=os.path.join(BASE_DIR, '.env'))
+
 SECRET_KEY = os.getenv('SECRET_KEY')
 
-
-ALLOWED_HOSTS = ['auctionslisting.up.railway.app', '127.0.0.1']
+ALLOWED_HOSTS = ['auctionslisting.up.railway.app', '127.0.0.1', 'localhost', '0.0.0.0']
 
 #ALLOW all host to access the server
-CSRF_TRUSTED_ORIGINS = ['https://auctionslisting.up.railway.app', 'https://127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://auctionslisting.up.railway.app', 'https://127.0.0.1', 'http://localhost', 'http://0.0.0.0']
 
 SECURE_CROSS_ORIGIN_OPENER_POLICY= 'same-origin-allow-popups'
 
@@ -88,10 +88,10 @@ WSGI_APPLICATION = 'commerce.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql', 
-        'NAME': 'auctions_db',  
-        'USER': 'db_master', 
+        'NAME': os.getenv('DB_NAME'),  
+        'USER': os.getenv('DB_USER'), 
         'PASSWORD': os.getenv('DB_PASSWORD'),  
-        'HOST': 'auctions-db.clwjrva4wiz5.us-east-1.rds.amazonaws.com', 
+        'HOST': os.getenv('DB_HOST'), 
         'PORT': '5432',  
     }
 }
@@ -139,5 +139,4 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'auctions/static')
 ]
 
-
-DEBUG=False
+DEBUG=True
