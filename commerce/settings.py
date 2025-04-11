@@ -139,4 +139,4 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'auctions/static')
 ]
 
-DEBUG=True
+DEBUG=False
